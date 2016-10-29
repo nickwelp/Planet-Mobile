@@ -1,0 +1,83 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+
+
+//Fox: what is this old ways?
+//Bird: before we had language and were anthropromophised you fool!
+//Fish: Every marble you recover sends us back to that idiocy.
+//Fox: I don't recall being an idiot. I'm a fox. 
+//Fish: A fox with a boyfriend. Do you think he'll even remember you once a simple animal again?
+//Fox: yeah, actually, I do; we've been together a long time. Still I wonder if taking the marbles back is the right thing.
+//Fish: attqack! while his resolve is shaken!
+
+
+        var dialogcontent = [
+        	{
+	        "dialog" : "What are these old ways?",
+	        "target" : "#foxd"
+        	},
+	        {
+	        "dialog" : "Before we had language and were anthropromophised you fool!             ",
+	        "target" : "#dialog1"
+        	},
+        	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#birdH",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#fishy",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}]
+	        },
+	        
+	        {
+	        	"dialog" : "Every marble you recover sends us back to that idiocy.    ",
+	        	"target" : "#dialog1",
+        	},
+        	{
+	        	"dialog" : "I don't recall being an idiot. I'm a fox.    ",
+	        	"target" : "#foxd",
+        	},
+	         
+	        {
+	        	"dialog" : "A fox with a boyfriend. Do you think he'll even remember you once a simple animal again?   ",
+	        	"target" : "#dialog1"
+        	},
+        	{
+	        	"dialog" : "Yeah, actually, I do; we've been together a long time. Still I wonder if taking the marbles back is the right thing to do.   ",
+	        	"target" : "#foxd",
+        	},
+        	{
+        		"dialog":"Attack! While his resolve is shaken!   ",
+        		"target":"#dialog1",
+
+        	},
+
+	        
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+	<a id="next" href="level-011.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+	<div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <div id="otherD"><span id="foxd"></span></div>
+    <img src="images/fox-face.gif" id="foxy" class="superFox" />
+    <img id="birdy" src="images/bird-face.gif" class="superFox" style="display:none;" />
+    <img id="fishy" src="images/flyingsigh-face.gif"  class="other " style="display:none" />
+    <img id="turtley" src="images/turtle-face.gif" class="  " style='display:none;' />
+    <img id="capturedT" src="images/turtle-trapped.gif" style="display:none" class="other reverse" /> 
+    <img id="birdH" src="images/bird-face.gif" class="other reverse" style="display:block;" />
+</body>
+</html>

@@ -1,0 +1,120 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script>
+        	var ScreenWidth = window.innerWidth;
+			var ScreenHeight = window.innerHeight;
+            document.addEventListener('touchmove', function (e) {
+                                      e.preventDefault();
+                                      }, false);
+            var song;
+            function callMusic(){
+                song = new Media('audio/superhero.mp3').play();
+            }
+    </script>
+            
+    <script src="js/jquery-1.7.2.js"></script>
+    <script src="js/jquery.cycle.all.js"></script>
+    
+    <style>
+    	#skip {
+    	    position: absolute;
+    	    left: 0px;
+    	    top: 100px;
+    	    z-index: 100000;
+    	    width: 20px;
+    	    height: 41px;
+    	}
+    	@font-face {
+    	    font-family: SimpleKindOfGirl;
+    	    src: url('SimpleKindOfGirl.ttf');
+    	}
+    	body {
+    	    font-family: SimpleKindOfGirl;
+    	}
+    	body,
+    	div,
+    	img {
+    	    margin: 0px;
+    	    position: absolute;
+    	    top: 0px;
+    	    z-index: 999;
+    	    left: 0px;
+    	    background-color: black;
+    	}
+    	a {
+    	    position: absolute;
+    	    left: 0;
+    	    top: 0px;
+    	    z-index: 999999;
+    	}
+    	.music {
+    	    left: 100px;
+    	}
+    	#prev {
+    	    position: absolute;
+    	    z-index: 99999;
+    	    top: 0px;
+    	    left: 333px;
+    	    width: 58px;
+    	    height: 21px;
+    	}
+    	img {
+    	    border: none;
+    	}
+    	#rotate {
+    	    width: 100%;
+    	}
+    	#rotate img {
+    	    margin: auto;
+    	}
+    </style>
+</head>    
+<body>
+    <div id="prev"><img src="images/previous.png"></div>
+    <div id="next"><img src="images/next.png"></div>
+    <div id="skip" onclick="skip()">
+    	<a href="level-001.html"><img src="images/skip.png" /></a></div>
+        <a href="index.html" onclick="stopMusic();"> back</a>
+        <a href="javascript:void(0);" onclick="callMusic()" class="music">music</a>
+        <div id="rotate">
+        	<img src="story-scenes/story-1-still-1.jpg" />
+        	<img src="story-scenes/story-1-still-2.jpg" />
+        	<img src="story-scenes/story-1-still-3.jpg" />
+        	<img src="story-scenes/story-1-still-4.jpg" />
+        	<img src="story-scenes/story-1-still5.jpg" />
+        	<img src="story-scenes/story-1-still-6.jpg" />
+        	<img src="story-scenes/story-1-still-7.jpg" />
+        	<img src="story-scenes/story-1-still-8.jpg" />
+        	<img src="story-scenes/story-1-still-10.jpg" />
+        	<img src="story-scenes/story-1-still-11.jpg" />
+        	<img src="story-scenes/story-1-still-12.jpg" />
+        	<img src="story-scenes/story-1-still-13.jpg" />
+        	<img src="story-scenes/story-1-still-14.jpg" />
+        	<img src="story-scenes/story-1-still-15.jpg" />
+        	<img src="story-scenes/story-1-still-16.jpg" />
+        	<img src="story-scenes/story-1-still-18.jpg" />
+        	<img src="story-scenes/story-1-still-19.jpg" />
+        	<img src="story-scenes/story-1-still-20.jpg" />
+        	<img src="story-scenes/story-1-still-21.jpg" />
+        	<img src="story-scenes/story-1-still-22.jpg" />
+        	<a href="level-001.html" onclick="load();"><img src="story-scenes/end-story.gif" /></a>
+     	</div>
+        <script>
+			function load(){
+				window.location.href = "level-001.html";
+				}
+			$('#rotate img').css('height',ScreenHeight);
+          	$('#rotate').cycle({
+                               timeout: 4000, 
+                               fx: 'none',
+                               nowrap: 1 ,
+                               next:   '#rotate',
+                               prev: '#prev'
+                               });
+          
+    
+        </script>
+    </body>
+</html>

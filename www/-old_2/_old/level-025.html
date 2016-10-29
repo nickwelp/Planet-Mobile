@@ -1,0 +1,510 @@
+<html>
+    <heAD>
+        <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <script src="GameCenterPlugin.js"></script><script src="cookieHandler.js" /></script>
+        <script src="cordova-2.2.0.js"></script>
+        <script src="initialize-db.js"></script>
+        <script src="initialize.js"></script>
+        <script>
+
+            
+            if(1===1){
+              var Sprites = new Array();
+                
+Sprites.push({id:'sunorb-6',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 700, z: 700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-7',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 700, z: 700, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-9',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 700, z: 700, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-11',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 700, z: 700, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-13',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 700, z: 700, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-15',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 700, z: 700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-17',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 800, z: 800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-19',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 800, z: 800, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-21',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 800, z: 800, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-23',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 800, z: 800, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-25',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 800, z: 800, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-26',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 800, z: 800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-28',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 900, z: 900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-29',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 900, z: 900, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-31',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 900, z: 900, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-33',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 900, z: 900, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-35',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 900, z: 900, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-37',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 900, z: 900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-39',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1000, z: 1000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-41',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1000, z: 1000, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-43',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1000, z: 1000, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-45',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1000, z: 1000, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-47',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1000, z: 1000, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-48',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1000, z: 1000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-50',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1100, z: 1100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-51',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1100, z: 1100, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-53',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1100, z: 1100, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-55',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1100, z: 1100, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-57',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1100, z: 1100, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-59',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1100, z: 1100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-61',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1200, z: 1200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-70',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1200, z: 1200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-72',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1300, z: 1300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'widerock-73',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1300, z: 1300, x: -500, y: 0, type: 'widerock' });
+Sprites.push({id:'widerock-76',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1300, z: 1300, x: -140, y: 0, type: 'widerock' });
+Sprites.push({id:'widerock-79',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1300, z: 1300, x: 220, y: 0, type: 'widerock' });
+Sprites.push({id:'sunorb-81',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1300, z: 1300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-83',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1400, z: 1400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'widerock-85',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1400, z: 1400, x: -380, y: 0, type: 'widerock' });
+Sprites.push({id:'rock-87',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1400, z: 1400, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'widerock-88',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1400, z: 1400, x: -20, y: 0, type: 'widerock' });
+Sprites.push({id:'rock-91',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1400, z: 1400, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-92',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1400, z: 1400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-94',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1500, z: 1500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'widerock-95',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1500, z: 1500, x: -500, y: 0, type: 'widerock' });
+Sprites.push({id:'rock-97',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1500, z: 1500, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-99',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1500, z: 1500, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-101',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1500, z: 1500, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-103',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1500, z: 1500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-105',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1600, z: 1600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-107',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1600, z: 1600, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-109',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1600, z: 1600, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-111',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1600, z: 1600, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-113',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1600, z: 1600, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-114',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1600, z: 1600, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-116',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1700, z: 1700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-117',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1700, z: 1700, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-119',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1700, z: 1700, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-121',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1700, z: 1700, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-123',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1700, z: 1700, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-125',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1700, z: 1700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-127',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-129',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-131',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-133',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-135',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-136',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-138',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1900, z: 1900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-139',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1900, z: 1900, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-141',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1900, z: 1900, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-143',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1900, z: 1900, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-145',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1900, z: 1900, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-147',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1900, z: 1900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-149',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2000, z: 2000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-158',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2000, z: 2000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-160',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2100, z: 2100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'redmarble-161',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2100, z: 2100, x: -500, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-163',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2100, z: 2100, x: -260, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-165',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2100, z: 2100, x: -20, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-167',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2100, z: 2100, x: 220, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-169',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2100, z: 2100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-171',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'redmarble-173',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: -380, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-175',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: -140, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-177',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: 100, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-179',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: 340, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-180',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-182',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2300, z: 2300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'redmarble-183',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2300, z: 2300, x: -500, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-185',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2300, z: 2300, x: -260, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-187',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2300, z: 2300, x: -20, y: 0, type: 'redmarble' });
+Sprites.push({id:'redmarble-189',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2300, z: 2300, x: 220, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-191',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2300, z: 2300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-193',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-194',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-195',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-196',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-199',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-200',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-201',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-202',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2400, z: 2400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-204',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2500, z: 2500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-205',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2500, z: 2500, x: -500, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-213',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2500, z: 2500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-215',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-216',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-218',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-219',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-220',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-221',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-222',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-223',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-224',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2600, z: 2600, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-226',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2700, z: 2700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-235',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2700, z: 2700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-237',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2800, z: 2800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-243',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2800, z: 2800, x: 100, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-246',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2800, z: 2800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-248',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-249',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-250',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-251',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -260, y: 0, type: 'rock' });
+Sprites.push({id:'rock-252',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-253',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-256',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-257',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-259',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3000, z: 3000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-268',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3000, z: 3000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-270',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'bird-271',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: -500, y: 0, type: 'bird' });
+Sprites.push({id:'bird-272',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: -380, y: 0, type: 'bird' });
+Sprites.push({id:'bird-273',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: -260, y: 0, type: 'bird' });
+Sprites.push({id:'bird-274',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: -140, y: 0, type: 'bird' });
+Sprites.push({id:'bird-275',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: -20, y: 0, type: 'bird' });
+Sprites.push({id:'bird-276',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: 100, y: 0, type: 'bird' });
+Sprites.push({id:'bird-277',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: 220, y: 0, type: 'bird' });
+Sprites.push({id:'bird-278',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: 340, y: 0, type: 'bird' });
+Sprites.push({id:'sunorb-279',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3100, z: 3100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-281',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'bird-282',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: -500, y: 0, type: 'bird' });
+Sprites.push({id:'bird-283',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: -380, y: 0, type: 'bird' });
+Sprites.push({id:'bird-284',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: -260, y: 0, type: 'bird' });
+Sprites.push({id:'bird-285',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: -140, y: 0, type: 'bird' });
+Sprites.push({id:'bird-286',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: -20, y: 0, type: 'bird' });
+Sprites.push({id:'bird-287',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: 100, y: 0, type: 'bird' });
+Sprites.push({id:'bird-288',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: 220, y: 0, type: 'bird' });
+Sprites.push({id:'bird-289',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: 340, y: 0, type: 'bird' });
+Sprites.push({id:'sunorb-290',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-292',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'bird-293',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: -500, y: 0, type: 'bird' });
+Sprites.push({id:'bird-294',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: -380, y: 0, type: 'bird' });
+Sprites.push({id:'bird-295',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: -260, y: 0, type: 'bird' });
+Sprites.push({id:'bird-296',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: -140, y: 0, type: 'bird' });
+Sprites.push({id:'bird-297',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: -20, y: 0, type: 'bird' });
+Sprites.push({id:'bird-298',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: 100, y: 0, type: 'bird' });
+Sprites.push({id:'bird-299',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: 220, y: 0, type: 'bird' });
+Sprites.push({id:'bird-300',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: 340, y: 0, type: 'bird' });
+Sprites.push({id:'sunorb-301',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3300, z: 3300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-303',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3400, z: 3400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-312',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3400, z: 3400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-314',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3500, z: 3500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-323',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3500, z: 3500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-325',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-326',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-327',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-330',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-331',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-332',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-333',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-334',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-336',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-337',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-340',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-341',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-342',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-343',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-344',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-345',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3700, z: 3700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-347',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-348',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-351',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-352',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-353',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-354',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-355',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-356',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-358',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3900, z: 3900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-364',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3900, z: 3900, x: 100, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-367',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3900, z: 3900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-369',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4000, z: 4000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-370',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4000, z: 4000, x: -500, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-378',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4000, z: 4000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-380',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-381',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-384',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-385',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-386',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-387',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-388',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-389',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4100, z: 4100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-391',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-392',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-395',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: -140, y: 0, type: 'rock' });
+Sprites.push({id:'rock-396',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-397',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-398',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-399',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-400',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4200, z: 4200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-402',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'rock-403',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: -500, y: 0, type: 'rock' });
+Sprites.push({id:'rock-404',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: -380, y: 0, type: 'rock' });
+Sprites.push({id:'rock-407',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: -20, y: 0, type: 'rock' });
+Sprites.push({id:'rock-408',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: 100, y: 0, type: 'rock' });
+Sprites.push({id:'rock-409',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: 220, y: 0, type: 'rock' });
+Sprites.push({id:'rock-410',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: 340, y: 0, type: 'rock' });
+Sprites.push({id:'sunorb-411',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4300, z: 4300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-413',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4400, z: 4400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-414',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4400, z: 4400, x: -500, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-422',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4400, z: 4400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-424',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4500, z: 4500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-426',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4500, z: 4500, x: -380, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-433',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4500, z: 4500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-435',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4600, z: 4600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-438',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4600, z: 4600, x: -260, y: 0, type: 'flyingfish' });
+Sprites.push({id:'redmarble-440',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4600, z: 4600, x: -20, y: 0, type: 'redmarble' });
+Sprites.push({id:'turtle-442',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4600, z: 4600, x: 220, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-444',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4600, z: 4600, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-446',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4700, z: 4700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-450',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4700, z: 4700, x: -140, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-455',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4700, z: 4700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-457',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4800, z: 4800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-458',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4800, z: 4800, x: -500, y: 0, type: 'turtle' });
+Sprites.push({id:'flyingfish-462',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4800, z: 4800, x: -20, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-466',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4800, z: 4800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-468',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4900, z: 4900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-469',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4900, z: 4900, x: -500, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-474',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4900, z: 4900, x: 100, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-477',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4900, z: 4900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-479',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5000, z: 5000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-481',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5000, z: 5000, x: -380, y: 0, type: 'flyingfish' });
+Sprites.push({id:'redmarble-483',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5000, z: 5000, x: -140, y: 0, type: 'redmarble' });
+Sprites.push({id:'flyingfish-486',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5000, z: 5000, x: 220, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-488',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5000, z: 5000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-490',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5100, z: 5100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-493',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5100, z: 5100, x: -260, y: 0, type: 'flyingfish' });
+Sprites.push({id:'turtle-495',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5100, z: 5100, x: -20, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-499',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5100, z: 5100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-501',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5200, z: 5200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-505',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5200, z: 5200, x: -140, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-510',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5200, z: 5200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-512',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-513',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: -500, y: 0, type: 'flyingfish' });
+Sprites.push({id:'turtle-515',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: -260, y: 0, type: 'turtle' });
+Sprites.push({id:'flyingfish-517',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: -20, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-521',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-523',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-525',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -380, y: 0, type: 'flyingfish' });
+Sprites.push({id:'redmarble-527',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -140, y: 0, type: 'redmarble' });
+Sprites.push({id:'flyingfish-529',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: 100, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-532',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-534',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-537',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: -260, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-541',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: 220, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-543',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-545',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'redmarble-546',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: -500, y: 0, type: 'redmarble' });
+Sprites.push({id:'flyingfish-549',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: -140, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-553',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: 340, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-554',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-556',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-558',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: -380, y: 0, type: 'turtle' });
+Sprites.push({id:'flyingfish-561',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: -20, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-565',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-567',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-568',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: -500, y: 0, type: 'flyingfish' });
+Sprites.push({id:'turtle-571',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: -140, y: 0, type: 'turtle' });
+Sprites.push({id:'flyingfish-573',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: 100, y: 0, type: 'flyingfish' });
+Sprites.push({id:'redmarble-574',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: 220, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-576',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-578',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-580',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: -380, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-585',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: 220, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-587',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-589',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-592',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -260, y: 0, type: 'flyingfish' });
+Sprites.push({id:'redmarble-594',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -20, y: 0, type: 'redmarble' });
+Sprites.push({id:'flyingfish-597',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: 340, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-598',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-600',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-604',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: -140, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-609',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-611',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-612',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -500, y: 0, type: 'flyingfish' });
+Sprites.push({id:'turtle-614',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -260, y: 0, type: 'turtle' });
+Sprites.push({id:'flyingfish-616',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -20, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-620',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-622',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6300, z: 6300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-624',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6300, z: 6300, x: -380, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-628',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6300, z: 6300, x: 100, y: 0, type: 'flyingfish' });
+Sprites.push({id:'turtle-630',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6300, z: 6300, x: 340, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-631',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6300, z: 6300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-633',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-636',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: -260, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-640',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: 220, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-642',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-644',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-645',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: -500, y: 0, type: 'turtle' });
+Sprites.push({id:'flyingfish-648',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: -140, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-652',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: 340, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-653',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-655',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-660',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: -20, y: 0, type: 'flyingfish' });
+Sprites.push({id:'redmarble-662',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: 220, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-664',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-666',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-667',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: -500, y: 0, type: 'flyingfish' });
+Sprites.push({id:'flyingfish-672',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: 100, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-675',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-677',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-679',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -380, y: 0, type: 'flyingfish' });
+Sprites.push({id:'turtle-681',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -140, y: 0, type: 'turtle' });
+Sprites.push({id:'flyingfish-684',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: 220, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-686',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-688',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-691',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: -260, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-697',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-699',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-703',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: -140, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-708',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-710',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'redmarble-711',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: -500, y: 0, type: 'redmarble' });
+Sprites.push({id:'flyingfish-715',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: -20, y: 0, type: 'flyingfish' });
+Sprites.push({id:'turtle-717',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: 220, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-719',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-721',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'flyingfish-727',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: 100, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-730',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-732',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-735',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: -260, y: 0, type: 'turtle' });
+Sprites.push({id:'redmarble-738',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: 100, y: 0, type: 'redmarble' });
+Sprites.push({id:'flyingfish-739',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: 220, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-741',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-743',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'redmarble-746',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: -260, y: 0, type: 'redmarble' });
+Sprites.push({id:'flyingfish-751',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: 340, y: 0, type: 'flyingfish' });
+Sprites.push({id:'sunorb-752',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-754',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-756',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: -380, y: 0, type: 'turtle' });
+Sprites.push({id:'redmarble-760',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: 100, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-763',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-765',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-769',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -140, y: 0, type: 'turtle' });
+Sprites.push({id:'redmarble-771',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: 100, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-774',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-776',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-778',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: -380, y: 0, type: 'turtle' });
+Sprites.push({id:'redmarble-780',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: -140, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-785',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-787',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-794',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: 220, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-796',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-798',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'redmarble-801',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: -260, y: 0, type: 'redmarble' });
+Sprites.push({id:'turtle-803',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: -20, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-807',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-809',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-811',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -380, y: 0, type: 'turtle' });
+Sprites.push({id:'redmarble-814',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -20, y: 0, type: 'redmarble' });
+Sprites.push({id:'sunorb-818',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-820',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'turtle-826',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: 100, y: 0, type: 'turtle' });
+Sprites.push({id:'sunorb-829',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-831',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-840',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-842',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'bluemarble-846',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: -140, y: 0, type: 'bluemarble' });
+Sprites.push({id:'sunorb-851',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-853',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'bluewave-857',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: -140, y: 0, type: 'bluewave' });
+Sprites.push({id:'sunorb-862',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-864',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-873',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: 460, y: 0, type: 'sunorb' });
+Sprites.push({id:'sunorb-875',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: -620, y: 0, type: 'sunorb' });
+Sprites.push({id:'ishtar-880',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: -20, y: 0, type: 'ishtar' });
+Sprites.push({id:'sunorb-884',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: 460, y: 0, type: 'sunorb' });
+LengthOfCourse = 8900;         
+
+
+
+
+
+            
+            }//details level, sprites
+            
+           
+            
+            
+            
+           
+            </script>
+        
+        <script src="hurtFox.js"></script>
+        <script src="handleScores.js"></script>
+    
+        <script src="sprites.js"></script>
+        <script src="represent-fox.js"></script>
+        <script src="deathStuff.js"></script>
+        <script src="newOpponents.js"></script>
+        <script>
+            
+            function DisplayEnd(X){
+                clearInterval(intervalID);
+                song.stop();
+              song.release();
+             setData();
+                callEndOfLevel("story-026.html");
+                //window.location.reload();             
+                
+            }
+            
+            </script>
+            <script src="moveThings.js"></script>
+       <script src="spineAndControls.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </HEAD>
+    <body>
+        <div id="PlayScreen">
+            <div id="fox"><img id="foxavatar" src="images/fox.gif" /></div>
+             <div id="pause" onclick="PauseGame();"><img src="images/pause.png" /></div>
+            <div id="blastScreen"></div>
+            <div id="midRain"></div>
+            
+            <div id="health"></div>
+            <div id="score"></div>
+            <div id="marble"></div>    <div id="error"></div><div id="endScreen" style="display:none;">Score: <span id="scoreTT"></span><br />Marbles: <span id="marblesTT"></span><br /><span id="nextLevel"></span></div>
+            <div id="joyStick"  >
+                <div id="leftButton"  onclick="void(0);"></div>
+            </div>
+        </div> 
+        <div id="pause-screen" style="display:none;"><a onclick="ResumeGame();" href="javascript:void(0);">Resume Game</a></div>
+        
+        <div id="start" ><a href="javascript:void(0);" onclick="Start();"><img src="images/intro-screen.png" /></a></div>
+        <div id='leftb'></div><div id='cenb'></div><div id='rightb'></div>
+        <div id="errorMonitor">
+        </div><div id="test">TESTR</div>
+        <script>
+            var touchable = 'createTouch' in document;
+            if(touchable) {
+                f('leftButton').addEventListener( 'touchstart', onTouchStart, false );
+                f('leftButton').addEventListener( 'touchmove', onTouchMove, false );
+                f('leftButton').addEventListener( 'touchend', onTouchEnd, false );
+                f('blastScreen').addEventListenr( 'touchstart2', onTouchStart, false);
+            }   
+            
+            </script>
+        <style>
+            
+            #PlayScreen{
+                width:480px;
+                height:320px;
+                
+                overflow:hidden;
+                position:absolute;
+                top:0px;
+                left:0px;
+                background-color:#b9fff3;
+                background:url('images/yellow-storm-ocean.jpg') no-repeat;
+                cursor:crosshair; 
+            }
+            
+            #blastScreen{
+                position:absolute;
+                top:0px;
+                left:0px;
+                z-index:999999;
+                width:480px;
+                height:380px;
+                background:url('images/foreground-rain.gif');
+                opacity:0.2;
+                pointer-events: none;
+                
+            }
+            
+            #midRain{
+                position:absolute;
+                top:0px;
+                left:0px;
+                width:490px;
+                height:320px;
+                background:url('images/midrange-rain.gif') no-repeat;
+                z-index:2;
+                opacity:0.09;
+                pointer-events: none;
+                
+            }
+            
+            </style>

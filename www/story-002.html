@@ -1,0 +1,27 @@
+<html>
+<head>
+       	<meta charset="UTF-8">   
+       	<meta name="viewport" content="user-scalable=no,width=device-width" />
+       	<script src="cordova-2.2.0.js"></script>
+       	<script src="js/jquery-1.7.2.js"></script>
+       	<script>
+       		var dialogcontent = [{}];
+			dialogcontent[0].dialog="So you think you can recover Ishtar's marbles eh? What kind of fool are you, that you'd try your luck against us?";
+			dialogcontent[0].target = "#dialog1";
+			function StartDialog(c){
+			    window.console && console.log("[PF] Calling WriteText");
+				$(c[0].target).writeText(c[0].dialog,0,c);
+				
+			 }
+		</script>
+      	<script src="js/story-functions.js"></script>
+      	<link rel="stylesheet" href="css/story.css">
+</head>        
+<body > 
+    <a id="next" href="level-002.html" ontouchstart="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+    <div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <img src="images/bird-face.gif" class="other reverse" />
+    <img src="images/fox-face.gif" class="superFox" />
+    </body>
+</html>

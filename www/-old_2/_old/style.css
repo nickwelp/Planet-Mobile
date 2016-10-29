@@ -1,0 +1,141 @@
+#PlayScreen{
+	width:480px;
+	height:320px;
+
+    overflow:hidden;
+position:absolute;
+top:0px;
+left:0px;
+    background-color:#b9fff3;
+    background:url('images/ocean.gif') no-repeat;
+    cursor:crosshair; 
+	}
+@font-face {
+	font-family: SimpleKindOfGirl;
+	src: url('SimpleKindOfGirl.ttf');
+}	
+	
+.disabled{
+	pointer-events:none;
+	}
+#fox{
+position:absolute;
+top:130;
+z-index:500;
+left:240;
+pointer-events: none;
+}
+#foxavatar{
+width:50px;
+}
+.ignoreRock{
+pointer-events: none;
+}
+#start{
+	position:absolute;
+	z-index:999900;
+	top:0;
+	left:0;
+}
+#health{
+position:absolute;
+left:20;
+top:10;
+background-color:red;
+height:10px;
+}
+#score{
+position:absolute;
+left:300;
+top:10;
+font-size:12px;
+font-weight:700;
+font-family:arial;
+color:red;
+}
+#marble{
+position:absolute;
+left:400;
+top:10;
+font-size:12px;
+font-weight:700;
+font-family:arial;
+color:purple;
+}
+#leftButton{
+position:absolute;
+}
+#joyStick{
+position:relative;
+z-index:100000;
+}
+#leftButton{
+top:270px;
+left:13px;
+z-index:2550;
+height:30px;
+width:150px;
+background:url('images/leftButton.png') no-repeat;
+}
+#error{
+	position:absolute;
+	pointer-events:none;
+	top:270px;
+	left:300px;
+	 
+	}
+	
+
+    
+@font-face {
+	font-family: SimpleKindOfGirl;
+	src: url('SimpleKindOfGirl.ttf');
+}	    
+body{font-family: SimpleKindOfGirl;}
+
+#endScreen{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  heght:100%;
+  background-color:red;
+  color:black;
+  font-family:cursive;
+text-align:center;
+}
+#pause-screen{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	text-align:center;
+	font-family:SimpleKindOfGirl;
+	z-index:999999;
+	background:url('images/white66.png');
+	}
+#pause-screen a{
+	padding-top:100px;
+	color:black;
+	text-decoration:none;
+	display:block;
+	}
+#pause{
+	position:absolute;
+	top:300px;
+	left:380px;
+	z-index:99999;
+	}
+#blastScreen{
+	display:none;
+	position:absolute;
+	pointer-events:none;
+	top:0px;
+	left:0px;
+	width:480px;
+	height:320px;
+	background-color:red;
+	opacity:0.4;
+	z-index:999991;
+	}

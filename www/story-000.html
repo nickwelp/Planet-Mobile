@@ -1,0 +1,249 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="js.cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+/* 
+	View of Earth, stars
+	PLANET FOX
+	CHapter 1
+	---
+	THE NIGHT OF THE WORLD
+
+	View of Earth, stars
+	View of Earth, no stars
+
+	Earth -- Where did the stars go?
+
+	View of Earth, with Ishtar
+	Ish: Planet???? What happened?
+	Ish: I lost my marbles and I can't get them back!!!
+
+	Veiw of beach, Planet Fox
+	Planet: Hi Ishtar!      
+	Planet I have not seen your marbles
+	Planet: But you seem lost.
+	Planet: And you asked for me by name!
+	Planet: I'll help you!
+
+	Ishtar: Thank You!
+	Ish: I was beginning to lose my mind!
+	Ish: Find all my marbles!
+	Ish: Watch out for my enemies!
+	Ish: And now, at last...
+	Ish: Take this radical cosmic windsurf board to guide you!
+
+	Planet: This board is awesome!
+
+	Tap to load level 1!
+
+
+*/
+
+        var dialogcontent = [
+        	{
+	        "dialog" : "PLANET FOX   Chapter 1                  ...",
+	        "target" : "#chapter-title",
+	    	},
+			{
+	        "dialog" : "THE NIGHT OF THE WORLD                       ...",
+	        "target" : "#chapter-title",
+	    	},
+	    	{  
+	        "dialog" : "                                      ",
+	        "target" : "#chapter-title",
+	    	},
+	    	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"body",
+	        		 "attribute":"background-image",
+	        		 "order":"url(images/earth-black-bg.jpg)",
+	        		},
+	        		{
+	        			"target":"#foxd",
+	        			"attribute":"color",
+	        			"order":"white",
+	        		}
+	        	]
+	        },
+	        {  
+	        "dialog" : "                   ",
+	        "target" : "h1#chapter-title",
+	    	},
+	    	{  
+	        "dialog" : "",
+	        "target" : "h1#chapter-title",
+	    	},
+	    	{
+	        "dialog" : "Where did the stars go?                 ",
+	        "target" : "#foxd",
+	    	},    	
+	    	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#ishtar-face",
+	        		 "attribute":"display",
+	        		 "order":"block",
+	        		},
+	        		{
+	        			"target":"#dialog1",
+	        			"attribute":"color",
+	        			"order":"white",
+
+	        		},
+	        	]
+	        },
+	    	{
+	    		"dialog" : "Planet????           What happened?             ...",
+	    		"target" : "#dialog1",
+
+	    	},
+	    	{
+	    		"dialog" : "I lost my marbles and I can't get them back!!!            ",
+	    		"target" : "#dialog1",
+
+	    	},
+	    	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"body",
+	        		 "attribute":"background-image",
+	        		 "order":"url(images/beach-bg.jpg)",
+	        		},
+	        		{"target":"#ishtar-face",
+	        		 "attribute":"display",
+	        		 "order":"none",
+	        		},
+	        		{"target":"#foxy",
+	        		 "attribute":"display",
+	        		 "order":"block",
+	        		},
+	        	]
+	        },
+	        {
+	        	"dialog" : " ",
+	        	"target" : "#dialog1",
+	    	},
+			{
+	        	"dialog" : "Hi Ishtar!             ...",
+	        	"target" : "#foxd",
+	    	},  
+			{
+	        	"dialog" : "I have not seen your marbles                ...",
+	        	"target" : "#foxd",
+	    	},
+	    	{
+	        	"dialog" : "but you seem lost.               ...",
+	        	"target" : "#foxd",
+	    	},
+	    	{
+	        	"dialog" : "And you asked for me by name!              ...",
+	        	"target" : "#foxd",
+	    	},    
+	    	{
+	        	"dialog" : "I'll help you!             ...",
+	        	"target" : "#foxd",
+	    	},    
+			{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{
+	        			"target":"#foxy",
+	        			"attribute":"display",
+	        			"order":"none"
+	        		},
+	        		{
+	        			"target":"body",
+	        			"attribute":"background-image",
+	        			"order":"url(images/earth-black-bg.jpg)",
+
+	        		},
+	        		{"target":"#ishtar-face",
+	        		 "attribute":"display",
+	        		 "order":"block",
+	        		},
+	        	]
+	        },
+	        {
+	        	"dialog":" ",
+	        	"target":"#foxd",
+	        },
+	        {  
+	        "dialog" : "Thank You!            I was beginning to lose my mind!          ...",
+	        "target" : "#dialog1",
+	    	},
+	    	{
+	        "dialog" : "Find all my marbles!              ...",
+	        "target" : "#dialog1",
+	    	},
+	    	{
+	        "dialog" : "Watch out for my enemies!              ...",
+	        "target" : "#dialog1",
+	    	},
+	    	{
+	        "dialog" : "And now, at last            ...",
+	        "target" : "#dialog1",
+	    	},
+	        {
+	        "dialog" : "Take this radical cosmic windsurf board to guide you!                ...",
+	        "target" : "#dialog1",
+	    	},
+	    	{
+	        "dialog" : "   ",
+	        "target" : "#dialog",
+	    	},
+	    	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"body",
+	        		 "attribute":"background-image",
+	        		 "order":"url(images/beach-bg.jpg)",
+	        		},
+	        		{"target":"#ishtar-face",
+	        		 "attribute":"display",
+	        		 "order":"none",
+	        		},
+	        		{"target":"#foxy",
+	        		 "attribute":"display",
+	        		 "order":"block",
+	        		},
+	        	]
+	        },
+	        {
+	        	"dialog":"This board is awesome!            ...",
+	        	"target":"#foxd",
+	        },
+
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+	<style>
+		body{
+			background-position:50%;
+			background-size:contain;
+			background-repeat: no-repeat;
+			background:url('images/stary-earth-bg.jpg') #000;
+
+		}
+		h1#chapter-title{
+			color:red;
+			text-align:center;
+			margin-top:20px;
+		}
+	</style>
+</head>
+<body>
+	<a id="next" href="level-011.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+	<div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <div id="otherD"><span id="foxd"></span></div>
+    <h1 id="chapter-title"></h1>
+    <img src="images/fox-face.gif" id="foxy" class="superFox" style="display:none;" />
+    <img id="ishtar-face" src="images/ishtar-face1.gif" class="other" style="display:none" />
+</body>
+</html>

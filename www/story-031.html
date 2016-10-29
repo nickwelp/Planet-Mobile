@@ -1,0 +1,129 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="js.cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+/*
+  Planet Fox! You made it! 
+      I never thought I'd see you again! Let alone, this world!      
+      But my victory comes with a heavy price. I left Turtle behind.      
+       Those fool turtles, they always go in for self sacrafice!     
+       (ishtar appears)
+       Planet Fox! You have returned my marbles! The Cthulu are a human problem, and now, no problem of mine!     
+And now, my Guardians of Reality, I must bid you farewell. I will return you to the reality from which I had chosen you.    
+       Except you Planet Fox. I have one last need of you.   
+       Return the stars to the sky! Tap empty skys to return the stars!     
+*/
+
+        var dialogcontent = [
+        	{
+	        "dialog" : "Planet Fox! You made it!         ",
+	        "target" : "#dialog1",
+	    	},
+	    	
+			{
+	        "dialog" : "I never thought I'd see you again! Let alone, this world!               ",
+	        "target" : "#foxd",
+	    	},
+	    	{
+	        "dialog" : "But my victory comes with a heavy price. I left Turtle behind.       ",
+	        "target" : "#foxd",
+	    	},    	
+	    	{
+	    		"dialog" : "Those fool turtles, they always go in for self sacrafice!        ",
+	    		"target" : "#dialog1",
+
+	    	},
+
+	    	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#birdH",
+	        		 "attribute":"display",
+	        		 "order":"none",
+	        		},
+	        		{"target":"#ishtar-glow",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		},
+
+	        	]
+	        },
+			{
+	        	"dialog" : "                  ",
+	        	"target" : "#foxd",
+	    	},  
+			{
+	        	"dialog" : "                          ",
+	        	"target" : "#dialog1",
+	    	},  
+			{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#ishtar-glow",
+	        		 "attribute":"display",
+	        		 "order":"none",
+	        		},
+	        		{"target":"#ishtar-face",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		},
+
+	        	]
+	        },
+	        {  
+	        "dialog" : "Planet Fox! You have returned my marbles! The Cthulu are a human problem, and now, no problem of mine!               ",
+	        "target" : "#dialog1",
+	    	},
+	    	   {
+	        "dialog" : "And now, my Guardians of Reality, I must bid you farewell. I will return you to the reality from which I had chosen you.             ",
+	        "target" : "#dialog1",
+	    	},
+	        {
+	        "dialog" : "But what of Turtle?    ...       ",
+	        "target" : "#foxd",
+	    	},
+	    	{
+	        "dialog" : "Oh dear... well, yes... you must stay tuned for the sequel:   SUPER TURTLE PRISON BREAK!                                  ...",
+	        "target" : "#dialog1",
+	    	},   
+	    	{
+	        	"dialog":"But not right away, Planet Fox. I have one immediate need of you.                 ...",
+	        	"target":"#dialog1",
+
+	        },
+	        {
+	        "dialog" : "        ",
+	        "target" : "#foxd",
+	    	},  
+	    	{
+	        "dialog" : "You must return the stars to the sky! Tap empty skies to return the stars!              ",
+	        "target" : "#dialog1",
+	    	}, 
+
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+	<a id="next" href="level-011.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+	<div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <div id="otherD"><span id="foxd"></span></div>
+    <img src="images/fox-face.gif" id="foxy" class="superFox" style="display:block" />
+    <img src="images/fish-priest.gif" id="fishpriest" class="  other  " style="display:none" />
+    <img id="silohetey" src="images/fox-sillohette.gif" class="other " style="display:none;" />
+    <img id="sharky" src="images/shark-face.gif" class="other " style="display:none;" />
+    <img id="fishy" src="images/flyingsigh-face.gif"  class="other reverse superFox" style="display:none" />
+    <img id="turtley" src="images/turtle-face.gif" class="   other " style='display:none;' />
+    <img id="birdy" src="images/bird-face.gif" class="superFox" style="display:none;" />
+    <img id="capturedT" src="images/turtle-trapped.gif" style="display:none" class="other reverse" /> 
+    <img id="birdH"  src="images/bird-face.gif" class="other reverse" style="display:block;" />
+    <img id="ishtar-glow" src="images/ISHTAR.png" class="other" style="display:none" />
+    <img id="ishtar-face" src="images/ishtar-face1.gif" class="other" style="display:none" />
+</body>
+</html>

@@ -1,0 +1,708 @@
+<html>
+    <head>
+    	<meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <script src="js/cordova-2.2.0.js"></script>
+        <script src="js/initialize.js"></script>
+        <script>
+        	//For Level One
+            PlanetFox.FoxHealth = 100; //Set the univeral variables of Health, Marble Score and Score
+            PlanetFox.MarbleScore = 0;   //Intialize for new game
+            PlanetFox.Score = 0;
+            PlanetFox.rotationSpeed = 1;
+			setCookie("score",0,365);
+			setCookie("marbles",0,365);
+			
+            
+            if(1===1){
+           
+            PlanetFox.Sprites.push({id:'getem-95',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4500, z: 4500, x: -500, y: 0, type: 'shark' });
+PlanetFox.Sprites.push({id:'redmarble-112',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4700, z: 4700, x: -20, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-122',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4800, z: 4800, x: -140, y: 0, type: 'bluewave' });
+PlanetFox.Sprites.push({id:'redmarble-124',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4800, z: 4800, x: 100, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'sunorb-135',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-137',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: -380, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-139',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: -140, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-141',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: 100, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-143',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: 340, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-144',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5300, z: 5300, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-146',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-147',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'cthulu-148',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -380, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'rock-149',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-151',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'cthulu-152',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: 100, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'rock-153',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-155',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5400, z: 5400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-157',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-159',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-161',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-163',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-165',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-166',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5500, z: 5500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-168',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-169',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-171',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-173',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-175',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-177',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5600, z: 5600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-179',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-181',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-183',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-185',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-187',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-188',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5700, z: 5700, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-190',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-191',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-193',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-195',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-197',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-199',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5800, z: 5800, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-201',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-203',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-205',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-207',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-209',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-210',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-212',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-213',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-215',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-217',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-219',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-221',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-223',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-225',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-227',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-229',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-231',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-232',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-234',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-235',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-237',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-239',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-241',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-243',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-245',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6300, z: 6300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-253',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6300, z: 6300, x: 340, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-255',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-256',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-258',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-260',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-261',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: 100, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-262',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-264',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6400, z: 6400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-266',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-268',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-270',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-272',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-274',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-275',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6500, z: 6500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-277',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-278',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-280',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-282',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-284',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-286',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6600, z: 6600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-288',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-290',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-292',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-294',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-296',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-297',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6700, z: 6700, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-299',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-300',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-302',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-303',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-304',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-306',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-307',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: 340, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'sunorb-308',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-310',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'redmarble-311',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: -500, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-312',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-314',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-316',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-318',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-319',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-321',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-322',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-324',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-326',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-328',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-330',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7000, z: 7000, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-332',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-334',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-336',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-338',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-340',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-341',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7100, z: 7100, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-343',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-344',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-346',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-348',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-350',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-351',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: 340, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'sunorb-352',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-354',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-356',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-358',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-360',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-362',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-363',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7300, z: 7300, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-365',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-366',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-368',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-369',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-370',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-372',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-374',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7400, z: 7400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-376',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'bird-377',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: -500, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-378',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-380',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-382',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-384',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-385',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7500, z: 7500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-387',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-388',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-390',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-391',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -140, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-392',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-394',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-396',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-398',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-400',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-402',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-404',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-406',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-407',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-409',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-410',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-412',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-414',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-416',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-418',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-420',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-422',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-423',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: -260, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-424',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-426',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-428',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-429',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7900, z: 7900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-431',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-432',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-434',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-435',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -140, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-436',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-438',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-439',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: 340, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'sunorb-440',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8000, z: 8000, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-442',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-444',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-446',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-448',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-450',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-451',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8100, z: 8100, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-453',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-454',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-456',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-457',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-458',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-460',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-462',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-464',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-466',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-468',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-470',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-472',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-473',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-475',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-476',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-478',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-480',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-482',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-484',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8400, z: 8400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-486',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-488',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-490',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'turtle-491',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: -20, y: 0, type: 'turtle' });
+PlanetFox.Sprites.push({id:'rock-492',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-494',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-495',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8500, z: 8500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-497',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-498',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-500',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'turtle-501',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: -140, y: 0, type: 'turtle' });
+PlanetFox.Sprites.push({id:'rock-502',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'turtle-503',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: 100, y: 0, type: 'turtle' });
+PlanetFox.Sprites.push({id:'rock-504',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-506',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8600, z: 8600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-508',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8700, z: 8700, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-510',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8700, z: 8700, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-512',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8700, z: 8700, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-513',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8700, z: 8700, x: -20, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-514',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8700, z: 8700, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-516',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8700, z: 8700, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-517',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8700, z: 8700, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-519',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8800, z: 8800, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-520',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8800, z: 8800, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-522',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8800, z: 8800, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-524',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8800, z: 8800, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-526',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8800, z: 8800, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-528',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8800, z: 8800, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-530',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8900, z: 8900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-532',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8900, z: 8900, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-534',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8900, z: 8900, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-536',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8900, z: 8900, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-538',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8900, z: 8900, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-539',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8900, z: 8900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-541',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-542',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-543',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: -380, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-544',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-545',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: -140, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-546',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-548',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-550',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9000, z: 9000, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-552',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'bird-553',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: -500, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-554',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-555',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: -260, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-556',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-558',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-560',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-561',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9100, z: 9100, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-563',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9200, z: 9200, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-564',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9200, z: 9200, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-565',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9200, z: 9200, x: -380, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-566',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9200, z: 9200, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-568',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9200, z: 9200, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-570',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9200, z: 9200, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-572',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9200, z: 9200, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-574',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9300, z: 9300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-576',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9300, z: 9300, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-578',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9300, z: 9300, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-580',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9300, z: 9300, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-582',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9300, z: 9300, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-583',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9300, z: 9300, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-585',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9400, z: 9400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-586',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9400, z: 9400, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-588',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9400, z: 9400, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-590',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9400, z: 9400, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-591',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9400, z: 9400, x: 100, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-592',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9400, z: 9400, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-594',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9400, z: 9400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-596',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-598',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-600',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'turtle-601',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: -20, y: 0, type: 'turtle' });
+PlanetFox.Sprites.push({id:'rock-602',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'turtle-603',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: 220, y: 0, type: 'turtle' });
+PlanetFox.Sprites.push({id:'rock-604',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-605',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9500, z: 9500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-607',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9600, z: 9600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-608',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9600, z: 9600, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-610',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9600, z: 9600, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-612',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9600, z: 9600, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-613',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9600, z: 9600, x: 100, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-614',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9600, z: 9600, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-616',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9600, z: 9600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-618',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9700, z: 9700, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'bird-619',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9700, z: 9700, x: -500, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-620',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9700, z: 9700, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-622',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9700, z: 9700, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-624',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9700, z: 9700, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-626',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9700, z: 9700, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-627',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9700, z: 9700, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-629',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9800, z: 9800, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-630',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9800, z: 9800, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-632',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9800, z: 9800, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-634',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9800, z: 9800, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-636',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9800, z: 9800, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-638',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9800, z: 9800, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-640',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9900, z: 9900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-642',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9900, z: 9900, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-643',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9900, z: 9900, x: -260, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-644',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9900, z: 9900, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-648',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9900, z: 9900, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-649',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 9900, z: 9900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-651',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10000, z: 10000, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-652',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10000, z: 10000, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-653',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10000, z: 10000, x: -380, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-654',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10000, z: 10000, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-656',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10000, z: 10000, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-658',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10000, z: 10000, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-660',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10000, z: 10000, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-662',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10100, z: 10100, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-664',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10100, z: 10100, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-666',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10100, z: 10100, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-668',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10100, z: 10100, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-670',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10100, z: 10100, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-671',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10100, z: 10100, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-673',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10200, z: 10200, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-674',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10200, z: 10200, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-676',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10200, z: 10200, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-677',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10200, z: 10200, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-678',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10200, z: 10200, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-680',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10200, z: 10200, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-682',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10200, z: 10200, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-684',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10300, z: 10300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-686',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10300, z: 10300, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-688',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10300, z: 10300, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-690',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10300, z: 10300, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-692',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10300, z: 10300, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-693',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10300, z: 10300, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-695',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10400, z: 10400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-696',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10400, z: 10400, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-698',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10400, z: 10400, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-700',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10400, z: 10400, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-702',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10400, z: 10400, x: 220, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'sunorb-704',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10400, z: 10400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-706',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10500, z: 10500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-708',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10500, z: 10500, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-710',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10500, z: 10500, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-712',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10500, z: 10500, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-713',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10500, z: 10500, x: 220, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-714',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10500, z: 10500, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-715',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10500, z: 10500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-717',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-718',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-719',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: -380, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-720',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-721',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-722',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-723',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: 100, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-724',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-726',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10600, z: 10600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-728',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10700, z: 10700, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-730',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10700, z: 10700, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-732',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10700, z: 10700, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-734',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10700, z: 10700, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-736',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10700, z: 10700, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-737',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10700, z: 10700, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-739',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-740',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-742',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-743',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-744',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-745',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: 100, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-746',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-747',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: 340, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'sunorb-748',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10800, z: 10800, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-750',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10900, z: 10900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-752',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10900, z: 10900, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-754',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10900, z: 10900, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-756',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10900, z: 10900, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-757',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10900, z: 10900, x: 220, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-758',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10900, z: 10900, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-759',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 10900, z: 10900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-761',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11000, z: 11000, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-762',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11000, z: 11000, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-764',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11000, z: 11000, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-766',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11000, z: 11000, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-768',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11000, z: 11000, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-770',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11000, z: 11000, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-772',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'bird-773',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: -500, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-774',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-775',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: -260, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-776',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-777',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: -20, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-778',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-780',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-781',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11100, z: 11100, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-783',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11200, z: 11200, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-784',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11200, z: 11200, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-786',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11200, z: 11200, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-788',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11200, z: 11200, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-789',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11200, z: 11200, x: 100, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-790',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11200, z: 11200, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-792',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11200, z: 11200, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-794',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-795',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-797',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-798',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-799',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-800',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: 100, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-801',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-802',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: 340, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'sunorb-803',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11300, z: 11300, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-805',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-807',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: -380, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-808',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: -260, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-809',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: -140, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-810',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: -20, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-811',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: 100, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'bird-812',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: 220, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'rock-813',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: 340, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-814',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11400, z: 11400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-816',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11500, z: 11500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'rock-817',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11500, z: 11500, x: -500, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-819',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11500, z: 11500, x: -260, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'redmarble-820',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11500, z: 11500, x: -140, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'rock-821',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11500, z: 11500, x: -20, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'rock-823',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11500, z: 11500, x: 220, y: 0, type: 'rock' });
+PlanetFox.Sprites.push({id:'sunorb-825',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11500, z: 11500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-827',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11600, z: 11600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-836',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11600, z: 11600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-838',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11700, z: 11700, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-840',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11700, z: 11700, x: -380, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-842',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11700, z: 11700, x: -140, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-844',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11700, z: 11700, x: 100, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-846',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11700, z: 11700, x: 340, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-847',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11700, z: 11700, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-849',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11800, z: 11800, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-850',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11800, z: 11800, x: -500, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-852',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11800, z: 11800, x: -260, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-854',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11800, z: 11800, x: -20, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-856',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11800, z: 11800, x: 220, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-858',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11800, z: 11800, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-860',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11900, z: 11900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-862',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11900, z: 11900, x: -380, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-864',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11900, z: 11900, x: -140, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-866',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11900, z: 11900, x: 100, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-868',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11900, z: 11900, x: 340, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-869',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 11900, z: 11900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-871',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12000, z: 12000, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-872',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12000, z: 12000, x: -500, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-874',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12000, z: 12000, x: -260, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-876',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12000, z: 12000, x: -20, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-878',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12000, z: 12000, x: 220, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-880',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12000, z: 12000, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-882',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'bird-884',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: -380, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'cthulu-885',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: -260, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'bird-886',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: -140, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'cthulu-888',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: 100, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-889',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: 220, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'bird-890',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: 340, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'sunorb-891',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12100, z: 12100, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-893',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12200, z: 12200, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-895',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12200, z: 12200, x: -380, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'bird-896',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12200, z: 12200, x: -260, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'cthulu-897',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12200, z: 12200, x: -140, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'bird-899',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12200, z: 12200, x: 100, y: 0, type: 'bird' });
+PlanetFox.Sprites.push({id:'cthulu-900',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12200, z: 12200, x: 220, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-902',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12200, z: 12200, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-904',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-905',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: -500, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-906',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: -380, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-907',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: -260, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'turtle-909',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: -20, y: 0, type: 'turtle' });
+PlanetFox.Sprites.push({id:'cthulu-910',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: 100, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-911',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: 220, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-912',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: 340, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-913',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12300, z: 12300, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-915',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12400, z: 12400, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-916',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12400, z: 12400, x: -500, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-918',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12400, z: 12400, x: -260, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-920',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12400, z: 12400, x: -20, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-922',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12400, z: 12400, x: 220, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-924',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12400, z: 12400, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-926',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12500, z: 12500, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'cthulu-928',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12500, z: 12500, x: -380, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-930',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12500, z: 12500, x: -140, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-932',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12500, z: 12500, x: 100, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'cthulu-934',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12500, z: 12500, x: 340, y: 0, type: 'cthulu' });
+PlanetFox.Sprites.push({id:'sunorb-935',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12500, z: 12500, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-937',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'redmarble-938',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: -500, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-939',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: -380, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-940',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: -260, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-941',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: -140, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-942',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: -20, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-943',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: 100, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-944',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: 220, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'redmarble-945',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: 340, y: 0, type: 'redmarble' });
+PlanetFox.Sprites.push({id:'sunorb-946',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12600, z: 12600, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'sunorb-950',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12900, z: 12900, x: -620, y: 0, type: 'sunorb' });
+PlanetFox.Sprites.push({id:'ishtar-955',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12900, z: 12900, x: -20, y: 0, type: 'ishtar' });
+PlanetFox.Sprites.push({id:'sunorb-959',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 12900, z: 12900, x: 460, y: 0, type: 'sunorb' });
+PlanetFox.LengthOfCourse = 13100;         
+
+
+
+            
+            }//details level, sprites
+            
+            FoxHealth = 100; //Set the univeral variables of Health, Marble Score and Score
+            
+            
+            
+           
+            </script>
+        
+      	<script src="js/game-functions.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/level.css" />
+    </head>
+    <body onload="PlanetFox.hidePreLoad();" onkeypress="PlanetFox.ProcessKeyStroke(event);" >
+        <div id="PlayScreen">
+            <div id="fox"><img id="foxavatar" src="images/fox.gif" /></div>
+             <div id="pause" onclick="PlanetFox.PauseGame();"><img src="images/pause.png" /></div>
+             
+            <div id="blastScreen"></div>
+            <div id="midRain"></div>
+            
+            <div id="health"></div>
+            <div id="score"></div>
+            <div id="marble"></div>
+            <div id="error"></div><div id="endScreen" style="display:none;">Score: <span id="scoreTT"></span><br />Marbles: <span id="marblesTT"></span><br /><span id="nextLevel"></span></div>
+            <div id="joyStick"  >
+                <div id="leftButton"  onclick="void(0);"></div>
+            </div>
+        </div> 
+        <div id="oceanView"></div><div id="pause-screen" style="display:none;"><a onclick="PlanetFox.ResumeGame();" href="javascript:void(0);">Resume Game</a><br />Effect Volume:<br /><select onchange="PlanetFox.SetEffectVolume(this.value);" name="evol">
+        <script>EVX = PlanetFox.EffectsVolume*10;document.write('<option value="'+EVX+'">'+EVX+'</option>');</script>
+        <option value="1.00">10</option><option value="0.90">9</option><option value="0.80">8</option><option value="0.70">7</option><option value="0.60">6</option><option value="0.50">5</option><option value="0.40">4</option><option value="0.30">3</option><option value="0.20">2</option><option value="0.10">1</option><option value="0.00">Off</option></select><br /><br />Music Volume<select onchange="PlanetFox.SetMusicVolume(this.value);" name="mvol"><script>MV = PlanetFox.MusicVolume*10;document.write('<option value="'+ MV +'">'+MV+'</option>');</script><option value="1.00">10</option><option value="0.90">9</option><option value="0.80">8</option><option value="0.70">7</option><option value="0.60">6</option><option value="0.50">5</option><option value="0.40">4</option><option value="0.30">3</option><option value="0.20">2</option><option value="0.10">1</option>
+        <option value="0.00">Off</option>
+        </select></div>
+		        
+        <div id="start" ><a href="javascript:void(0);" onclick="PlanetFox.Start();"><img src="images/intro-screen.png" /></a></div>
+        <div id='leftb'></div><div id='cenb'></div><div id='rightb'></div>
+        <div id="errorMonitor">
+        </div><div id="test" style="display:none"></div><audio id="audioTag" controls></audio>
+
+      
+<div id="preload">
+    <img src="images/arrow-left.png">
+    <img src="images/arrow-right.png">
+    <img src="images/bird-attack.gif">
+    <img src="images/bird-face.gif">
+    <img src="images/birdie-die-1.gif">
+    <img src="images/birdie-die-2.gif">
+    <img src="images/birdie-die-3.gif">
+    <img src="images/birdie-die-4.gif">
+    <img src="images/birdie-die-5.gif">
+    <img src="images/birdie-die-0.gif">
+    <img src="images/birdie.gif">
+    <img src="images/black-sphere.gif">
+    <img src="images/blue-marble.gif">
+    <img src="images/boss-hurt.gif">
+    <img src="images/boss-regen.gif">
+    <img src="images/boss-squid.gif">
+    <img src="images/boss.gif">
+    <img src="images/boss1.gif">
+    <img src="images/burst-ball.gif">
+    <img src="images/castle.gif">
+    <img src="images/cloud-attacks.gif">
+    <img src="images/code.png">
+    <img src="images/cthulu-die.gif">
+    <img src="images/cthulu-ocean.jpg">
+    <img src="images/cthulu.gif">
+    <img src="images/debris.gif">
+    <img src="images/fish-priest.gif">
+    <img src="images/flying-fish-forward.gif">
+    <img src="images/flyingsigh-face.gif">
+    <img src="images/fog.gif">
+    <img src="images/foreground-rain.gif">
+    <img src="images/fox-face.gif">
+    <img src="images/fox-facial.gif">
+    <img src="images/fox-flip.gif">
+    <img src="images/fox-in-water.jpg">
+    <img src="images/fox-in-wind.jpg">
+    <img src="images/fox-left.gif">
+    <img src="images/fox-left.png">
+    <img src="images/fox-right.gif">
+    <img src="images/fox-right.png">
+    <img src="images/fox-sillohette.gif">
+    <img src="images/fox-swimming-left.gif">
+    <img src="images/fox-swimming-lost.jpg">
+    <img src="images/fox-swimming-right.gif">
+    <img src="images/fox-swimming.gif">
+    <img src="images/fox-tentacles.gif">
+    <img src="images/fox.gif">
+    <img src="images/Game-Marque.jpg">
+    <img src="images/gitem.gif">
+    <img src="images/gitem.png">
+    <img src="images/goforward.png">
+    <img src="images/goleft.png">
+    <img src="images/goright.png">
+    <img src="images/high-resolution-iphone-screen-load.png">
+    <img src="images/intro-screen.gif">
+    <img src="images/intro-screen.png">
+    <img src="images/ishtar-face.gif">
+    <img src="images/ishtar-face1.gif">
+    <img src="images/ISHTAR.png">
+    <img src="images/joyStick.png">
+    <img src="images/leftButton.png">
+    <img src="images/low-resolution-app-icon-57.png">
+    <img src="images/low-resolution-splash.png">
+    <img src="images/midrange-rain.gif">
+    <img src="images/mountain-background.gif">
+    <img src="images/mrfox.png">
+    <img src="images/next.gif">
+    <img src="images/next.png">
+    <img src="images/night-sky.gif">
+    <img src="images/ocean.gif">
+    <img src="images/oceanbottom.gif">
+    <img src="images/octopus-die.gif">
+    <img src="images/octopus.gif">
+    <img src="images/pause.png">
+    <img src="images/Planet-fox-highresolution-icon.png">
+    <img src="images/previous.png">
+    <img src="images/red-marble-die-1.gif">
+    <img src="images/red-marble-die-2.gif">
+    <img src="images/red-marble-die-3.gif">
+    <img src="images/red-marble-die-4.gif">
+    <img src="images/red-marble-die-5.gif">
+    <img src="images/red-marble-die-0.gif">
+    <img src="images/red-marble.gif">
+    <img src="images/red-target.cur">
+    <img src="images/rightButton.png">
+    <img src="images/rock.gif">
+    <img src="images/rock.png">
+    <img src="images/seaweed.gif">
+    <img src="images/shaded-star.gif">
+    <img src="images/shark-attack.gif">
+    <img src="images/shark-face.gif">
+    <img src="images/shark-forward.gif">
+    <img src="images/shark-left.gif">
+    <img src="images/shark-right.gif">
+    <img src="images/skip.png">
+    <img src="images/sky.gif">
+    <img src="images/skySun.gif">
+    <img src="images/snowglobe.png">
+    <img src="images/star-blue.gif">
+    <img src="images/star-orbit.gif">
+    <img src="images/star-red-orbit.gif">
+    <img src="images/starfish-die-1.gif">
+    <img src="images/starfish-die-2.gif">
+    <img src="images/starfish-die-3.gif">
+    <img src="images/starfish-die-4.gif">
+    <img src="images/starfish-die-5.gif">
+    <img src="images/starfish-die.gif">
+    <img src="images/starfish.gif">
+    <img src="images/stars-none-old.gif">
+    <img src="images/stars-none.gif">
+    <img src="images/stars-red.gif">
+    <img src="images/stars-some.gif">
+    <img src="images/stars.gif">
+    <img src="images/storm-cloud.gif">
+    <img src="images/storm-cloud.png">
+    <img src="images/sunorb.gif">
+    <img src="images/swordfish-face.gif">
+    <img src="images/thanks.png">
+    <img src="images/tornado-die.gif">
+    <img src="images/tornado.gif">
+    <img src="images/turlte.gif">
+    <img src="images/turtle-die-1.gif">
+    <img src="images/turtle-die-2.gif">
+    <img src="images/turtle-die-3.gif">
+    <img src="images/turtle-die-4.gif">
+    <img src="images/turtle-die-5.gif">
+    <img src="images/turtle-die-0.gif">
+    <img src="images/turtle-face.gif">
+    <img src="images/turtle-trapped.gif">
+    <img src="images/wave.gif">
+    <img src="images/welcome.gif">
+    <img src="images/welcome.png">
+    <img src="images/white.gif">
+    <img src="images/white66.png">
+    <img src="images/wide-rock.gif">
+    <img src="images/yellow-storm-ocean.jpg">
+    <img src="images/you-win.gif">
+    <img src="images/you-win.png">
+    <img src="images/zapthisbird.gif">
+    <img src="images/zapthisbird.png">
+</div>
+<script src="js/lastLoad.js" ></script>

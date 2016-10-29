@@ -1,0 +1,192 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="js.cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+
+
+
+//Bird: I'm through. This bites. I didn't have to pay taxes when i was a dumb animal.
+//Fish: Do you think you can quit? Not when I call upon my master, the Cthulu!
+//[FISH transforms in to a cthulu priest]
+//FISHPREIST: I summon a storm the likes of which the world has never known, from the reality warping powers of the he who lurks beneath the waves!
+//Bird: He'll destroy this whole ocean! This storm is too big! The fish threatens the whole world. I can't reach the center, but with your trianglur sale you can sail in to the headwind! Reach the center and disrupt the cyclone!
+
+//{THE WIND IS TOO FEIRCE AND BLOWS THE PARTY UP; FOX IS THROWN IN TO THE AIR AND FALLS THROUGH THE SKY and LANDS IN THE WATER, CLINGING TO HIS BOARD TO SAVE HIMSELF FROM DROWNING. TEMPRATURES DROP RAPIDLY AND FOX BEGINS TO SHIVER. HE'S FEARS HE IS DOOMED. ITS GETTING COLDER.
+
+//FOX: I don't even know where I am, or which way to go.
+//[A DESERTED ISLAND]
+//FOX: I'll camp there. 
+
+
+
+        var dialogcontent = [
+        	{
+	        "dialog" : "I'm through. This bites. I didn't have to pay taxes when I was a dumb animal.     ",
+	        "target" : "#dialog1",
+	    	},
+	        {
+	        	"dialog":"[css]",
+	        	"command":[
+	        		{
+	        			"target":"#foxy",
+	        			"attribute":"display",
+	        			"order":"none",
+	        		},
+	        		{
+	        			"target":"#fishy",
+	        			"attribute":"display",
+	        			"order":"block",
+	        		},
+	        		
+	        	]
+	        },
+	  
+           {
+	        "dialog" : "Do you think you can quit? Not when I call upon my master, the Cthulu!         ",
+	        "target" : "#foxd",
+        	},
+        	{
+	        	"dialog":"[css]",
+	        	"command":[
+	        		{
+	        			"target":"#fishy",
+	        			"attribute":"display",
+	        			"order":"none",
+	        		},
+	        		{
+	        			"target":"#fishpriest",
+	        			"attribute":"display",
+	        			"order":"block",
+	        		},
+	        		
+	        	]
+	        },
+	  		{
+	        "dialog" : "I summon a storm the likes of which the world has never known, from the reality warping powers of the he who lurks beneath the waves!      ",
+	        "target" : "#foxd",
+        	},
+	        {
+	        "dialog" : "He'll destroy this whole ocean! This storm is too big! The fish threatens the whole world. I can't reach the center, but with your trianglur sail you can sail into the headwind! Reach the center and disrupt the cyclone!         ",
+	        "target" : "#dialog1",
+        	},
+        	{
+	        	"dialog":" ",
+	        	"target":"#dialog1",
+
+	        },
+        	{
+	        	"dialog":"[css]",
+	        	"command":[
+	        		{
+	        			"target":"#birdy",
+	        			"attribute":"display",
+	        			"order":"none",
+	        		},
+	        		{
+	        			"target":"#birdH",
+	        			"attribute":"display",
+	        			"order":"none",
+	        		},
+	        		{
+	        			"target":"#fishpriest",
+	        			"attribute":"display",
+	        			"order":"none",
+	        		},
+	        		{
+	        			"target":"#fox-in-wind",
+	        			"attribute":"display",
+	        			"order":"block",
+
+	        		},
+	        		{
+	        			"target":"#foxd",
+	        			"attribute":"color",
+	        			"order":"white",
+	        		},
+	        		{
+	        			"target":"#dialog1",
+	        			"attribute":"color",
+	        			"order":"white",
+	        		},
+	        		{
+	        			"target":"#foxd",
+	        			"attribute":"text-shadow",
+	        			"order":"0px 0px 1px #000",
+	        		},
+	        		{
+	        			"target":"#dialog1",
+	        			"attribute":"text-shadow",
+	        			"order":"0px 0px 1px #000",
+	        		},
+	        		{
+	        			"target":"body",
+	        			"attribute":"background-color",
+	        			"order":"#000",
+	        		},
+	        		
+	        	]
+	        },
+	      
+	        {
+	        	"dialog":"THE WIND IS TOO FEIRCE AND BLOWS THE PARTY UP. FOX IS THROWN INTO THE AIR AND FALLS THROUGH THE SKY. HE LANDS IN THE WATER, CLINGING TO HIS BOARD TO SAVE HIMSELF FROM DROWNING.   ",
+	        	"target":"#foxd",
+
+	        },
+	        {
+	        	"dialog":"[css]",
+	        	"command":[
+	        		{
+	        			"target":"#fox-in-wind",
+	        			"attribute":"display",
+	        			"order":"none",
+	        		},
+	        		{
+	        			"target":"#fox-in-water",
+	        			"attribute":"display",
+	        			"order":"block",
+	        		},
+	        	]
+	        },
+	        {
+	        	"dialog":" TEMPRATURES DROP RAPIDLY AND FOX BEGINS TO SHIVER. HE FEARS HE IS DOOMED. IT'S GETTING COLDER.   ",
+	        	"target":"#dialog1",
+
+	        },
+	        
+	        {
+	        	"dialog":"I don't even know where I am, or which way to go.    ",
+	        	"target":"#foxd",
+
+	        },
+	        {
+	        	"dialog":"There, I think I see a deserted island.  If I can make it to the shore, I won't die today.        ",
+	        	"target":"#dialog1",
+
+	        },
+	        
+
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+	<a id="next" href="level-011.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+	<div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <div id="otherD"><span id="foxd"></span></div>
+    <img src="images/fox-face.gif" id="foxy" class="superFox" style="" />
+    <img src="images/fish-priest.gif" id="fishpriest" class="superFox other reverse" style="display:none" />
+    <div style="background:url('images/fox-in-wind.jpg');background-size:contain;position:fixed;top:0;bottom:0;right:0;left:0; background-position:50%;background-repeat:no-repeat;display:none; z-index:-1;" id="fox-in-wind" >&nbsp;</div>
+    <div style="background:url('images/fox-in-water.jpg');background-size:contain;position:fixed;top:0;bottom:0;right:0;left:0;background-position:50%;background-repeat:no-repeat;display:none;z-index:-1;" id="fox-in-water" >&nbsp;</div>
+    <img id="birdy" src="images/bird-face.gif" class="other reverse" style="display:none;" />
+    <img id="fishy" src="images/flyingsigh-face.gif"  class="other reverse superFox" style="display:none" />
+    <img id="turtley" src="images/turtle-face.gif" class="  " style='display:none;' />
+    <img id="capturedT" src="images/turtle-trapped.gif" style="display:none" class="other reverse" /> 
+    <img id="birdH" src="images/bird-face.gif" class="other reverse" style="display:block;" />
+</body>
+</html>

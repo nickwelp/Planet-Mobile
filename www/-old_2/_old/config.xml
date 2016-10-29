@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.d36.games"
+    version   = "1.0.0">
+    
+    <name>Planet Fox</name>
+    
+    <description>
+        A Video Game
+    </description>
+    
+    <author href="http://www.datwilliamscomics.com" email="nickwelp@gmail.com">
+        Nick Welp
+    </author>
+    <preference name="orientation" value="landscape" />
+</widget>

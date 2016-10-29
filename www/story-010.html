@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+        var dialogcontent = [
+        	{
+	        "dialog" : "You are tough!",
+	        "target" : "#dialog1"
+        	},
+	        {
+	        "dialog" : "Thanks, but you don't have to keep testing me.    ",
+	        "target" : "#foxd"
+        	},
+	        
+	        {
+	        "dialog" : "No we're going to keep smashing you!   ",
+	        "target" : "#dialog1"
+        	},
+        	
+	        {
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#turtley",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#birdy",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}]
+	        },
+	        {
+		    "dialog" : "Why don't you run home to your vixen!     ",
+	        "target" : "#dialog1"
+       		},
+       		{
+	       	"dialog":"I'm gay and have a boyfriend, named Brad.      ",
+	       	"target":"#foxd"
+	       	},
+	       	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#birdy",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#fishy",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}
+	        ]},
+	       	
+       		{
+	       	"dialog":"So? Who cares? Get him!      ",
+	       	"target":"#dialog1"
+	       	}
+	       	
+	        
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+
+        
+     <a id="next" href="level-010.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a><div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+        <div id="dialog"><span id="dialog1"></span></div>
+        <div id="otherD"><span id="foxd"></span></div>
+        <img src="images/fox-face.gif" id="foxy" class="superFox" />
+        <img id="birdy" src="images/bird-face.gif" class="other reverse" style="display:none;" />
+        <img src="images/flyingsigh-face.gif" id="fishy" class="other " style="display:none;" />
+        <img id="turtley" src="images/turtle-face.gif" class="other" />
+    </body>
+</html>

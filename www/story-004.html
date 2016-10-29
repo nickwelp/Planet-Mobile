@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="cordova-2.2.0.js"></script>
+   	<script src="js/jquery-1.7.2.js"></script>
+	<script>
+		var dialogcontent = [{}];
+		dialogcontent[0].dialog="A Wizard Appears!";
+		dialogcontent[0].target = "#dialog1";
+		
+		function StartDialog(c){
+				$(c[0].target).writeText(c[0].dialog,0,c);
+				
+		}
+	</script>
+	<script src="js/story-functions.js"></script>
+    <link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+	<a id="next" href="level-004.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a><div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <img src="images/fox-face.gif" class="superFox" />
+    </body>
+</html>

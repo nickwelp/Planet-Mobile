@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="js.cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+
+        var dialogcontent = [
+          /*             
+
+
+
+
+
+    */
+                       
+        	{
+	        "dialog" : "Man I'm a long way from anywhere out here.       ",
+	        "target" : "#dialog1",
+	    	},
+	        {
+	        "dialog" : "How do I find the center of the storm? I guess which ever path is hardest is the way to go. Out here on the water, I am so isolated, and so far from land. I've never felt so alone.         ",
+	        "target" : "#foxd",
+        	},
+			{
+	        "dialog" : "Bird said there's more. The Cthulu have been pulling Ishtar's marbles into their reality.       ",
+	        "target" : "#dialog1",
+	    	},
+	    	{
+	        "dialog" : "As long as they hold her marbles there, they have an anchor in to our world. You need to go into their reality and bring them back, Bird said. How can I possibly find them in their reality?  ...   ",
+	        "target" : "#foxd",
+	    	},
+	    	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#sharky",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		},
+	        	]
+	        },
+	    	{
+	        "dialog" : "Hey look at that tasty morsel, swimming all on his lonesome, all the way out here! Lunch!      ",
+	        "target" : "#dialog1",
+	    	}
+
+
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+	<a id="next" href="level-011.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+	<div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <div id="otherD"><span id="foxd"></span></div>
+    <img src="images/fox-face.gif" id="foxy" class="superFox" style="" />
+    <img src="images/fish-priest.gif" id="fishpriest" class="superFox other reverse" style="display:none" />
+    <img id="silohetey" src="images/fox-sillohette.gif" class="other " style="display:none;" />
+    <img id="sharky" src="images/shark-face.gif" class="other " style="display:none;" />
+    <img id="fishy" src="images/flyingsigh-face.gif"  class="other reverse superFox" style="display:none" />
+    <img id="turtley" src="images/turtle-face.gif" class="  " style='display:none;' />
+    <img id="birdy" src="images/bird-face.gif" class="superFox" style="display:none;" />
+    <img id="capturedT" src="images/turtle-trapped.gif" style="display:none" class="other reverse" /> 
+    <img id="birdH"  src="images/bird-face.gif" class="other reverse" style="display:none;" />
+</body>
+</html>

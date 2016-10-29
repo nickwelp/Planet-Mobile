@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="js.cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+
+        var dialogcontent = [
+                       
+        	{
+	        "dialog" : "FOX SETS UP CAMP BUT lS TOO SCARED TO LlGHT A FlRE. HE HlDES HlS BOARD AND BURROWS lNTO A SMALL CAVE.       ",
+	        "target" : "#foxd",
+	    	},
+	       
+           {
+	        "dialog" : "HE WANTS TO TRY AND FlX THE BOARD lN THE MORNING BUT HE NEED'S SLEEP RlGHT NOW. lNSTEAD OF SLEEP, DOUBT AND RUMlNATlON CREEP lN.      ",
+	        "target" : "#dialog1",
+        	},
+			{
+	        "dialog" : "How did I even get involved? I'm always helping other people but obviously I need to start thinking more. Heck this is always my problem in relationships.       ",
+	        "target" : "#foxd",
+	    	},
+	    	{
+	        "dialog" : "Seems like even with my friends I'm burning myself out to go above and beyond for them but I really just don't get enough back.     ",
+	        "target" : "#dialog1",
+	    	},
+	    	{
+	        "dialog" : "Look at me, windsurfing around the world trying to help some strange cosmic woman. I'm libel to catch the flu. I don't even know where I am, I'm cold wet and hungry.   ",
+	        "target" : "#foxd",
+	    	},
+	    	{
+	        "dialog" : "And what about Brad? If that storm gets any stronger, the whole world will be in as much peril as I am. I hope he's burrowed up safe.     ",
+	        "target" : "#dialog1",
+	    	},
+	    	{
+	        "dialog" : "DESPITE HIS ANXIETY AND WORRIES, PLANET EVENTUALLY SLUMBERS.        A WIZARD APPEARS!    ",
+	        "target" : "#foxd",
+	    	},
+
+
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+	<a id="next" href="level-011.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+	<div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <div id="otherD"><span id="foxd"></span></div>
+    <img src="images/fox-face.gif" id="foxy" class="superFox" style="" />
+    <img src="images/fish-priest.gif" id="fishpriest" class="superFox other reverse" style="display:none" />
+    <img id="birdy" src="images/bird-face.gif" class="other reverse" style="display:none;" />
+    <img id="fishy" src="images/flyingsigh-face.gif"  class="other reverse superFox" style="display:none" />
+    <img id="turtley" src="images/turtle-face.gif" class="  " style='display:none;' />
+    <img id="capturedT" src="images/turtle-trapped.gif" style="display:none" class="other reverse" /> 
+    <img id="birdH" src="images/bird-face.gif" class="other reverse" style="display:none;" />
+</body>
+</html>

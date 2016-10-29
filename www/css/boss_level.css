@@ -1,0 +1,436 @@
+body {
+    overflow: hidden;
+}
+#errorMonitor {
+    position: absolute;
+    left: 500px;
+    color: red;
+}
+#PlayScreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -30;
+    overflow: hidden;
+    background-color: #b9fff3;
+    background: url('../images/yellow-storm-ocean.jpg') no-repeat;
+    background-size: cover;
+}
+#audioTag {
+    position: fixed;
+    top: -1000px;
+    z-index: -9999;
+}
+#AlongForRide0 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide1 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide2 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide3 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide4 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide5 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide6 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide7 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide8 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide9 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide10 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide11 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide12 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide13 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide14 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide15 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide16 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide17 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#AlongForRide18 {
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1;
+    font-family: serif;
+    top: 50%;
+    color: white;
+    position: absolute; font-size:2em;font-weight:600;
+}
+#NewRide0 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide1 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide2 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide3 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide4 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide5 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide6 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide7 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide8 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide9 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide11 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide12 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide13 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide14 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide15 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide16 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide17 {
+    position: absolute;
+    left: 408px;
+    z-index: 3;
+    top: 50%;
+}
+#NewRide0 img {
+    width: 46px;
+}
+#NewRide1 img {
+    width: 46px;
+}
+#NewRide2 img {
+    width: 46px;
+}
+#NewRide3 img {
+    width: 46px;
+}
+#NewRide4 img {
+    width: 46px;
+}
+#NewRide5 img {
+    width: 46px;
+}
+#NewRide6 img {
+    width: 46px;
+}
+#NewRide7 img {
+    width: 46px;
+}
+#NewRide8 img {
+    width: 46px;
+}
+#NewRide9 img {
+    width: 46px;
+}
+#NewRide11 img {
+    width: 46px;
+}
+#NewRide12 img {
+    width: 46px;
+}
+#NewRide13 img {
+    width: 46px;
+}
+#NewRide14 img {
+    width: 46px;
+}
+#NewRide15 img {
+    width: 46px;
+}
+#NewRide16 img {
+    width: 46px;
+}
+#NewRide17 img {
+    width: 46px;
+}
+#errorMonitor {
+    position: absolute;
+    left: 500px;
+    color: red;
+}
+#boss img {
+    width: 60%;
+}
+#boss {
+    position: absolute;
+    top: 27%;
+    /* 40px */
+    
+    left: calc(50% - 90px);
+    z-index: 1;
+}
+#fox {
+    position: absolute;
+    top: 55%;
+}
+
+#blastScreen {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+    /*  background:url('images/foreground-rain.gif');*/
+    
+    background-size: cover;
+    opacity: 0.2;
+    pointer-events: none;
+}
+#start{
+    position:fixed;
+    z-index:9999;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background:url('../images/intro-screen.png') center center no-repeat;
+    background-size:contain;
+    
+}
+#midRain {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    background: url('../images/midrange-rain.gif') no-repeat;
+    z-index: 2;
+    opacity: 0.09;
+    pointer-events: none;
+}
+#leftButton {
+    position: absolute;
+}
+#joyStick {
+    position: absolute;
+    z-index: 10000;
+}
+#leftButton {
+    z-index: 2550;
+    background: url('../images/leftButton.png') center center no-repeat;
+    background-size: contain;
+}

@@ -1,0 +1,180 @@
+html,body, *.noselect,*,img{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+@font-face {
+	font-family: SimpleKindOfGirl;
+	src: url('../images/SimpleKindOfGirl.ttf');
+}		
+body{
+	font-family: SimpleKindOfGirl;
+}
+#PlayScreen{
+  	top:0px;
+  	overflow:hidden;
+	left:0px;
+    background-color:#b9fff3;
+    background:url('../images/skySun.gif') center center no-repeat;
+	/* background:url('images/yellow-storm-ocean.jpg') no-repeat;   special occassions */
+    background-size:cover;
+	cursor:crosshair; 
+	height:100%;
+	width:100%;
+}
+#PlayScreen.stormy{
+	background:url('../images/skyStorm.gif') center center no-repeat;  
+    background-size:cover;
+}
+.disabled{
+	pointer-events:none;
+	}
+#fox{
+	position:absolute;
+	top:130;
+	z-index:500;
+	left:240;
+	pointer-events: none;
+}
+.ignoreRock{
+	pointer-events: none;
+}
+#start{
+	position:absolute;
+	z-index:999900;
+	top:0;
+	left:0;
+}
+#health{
+	position:absolute;
+	background-color:red;
+ 
+}
+#score{
+	position:absolute;
+	font-weight:700;
+	font-family:arial;
+	color:red;
+}
+#marble{
+	position:absolute;
+	font-weight:700;
+	font-family:arial;
+	color:purple;
+}
+#leftButton{
+	position:absolute;
+}
+#joyStick{
+	position:relative;
+	z-index:100000;
+}
+#leftButton{
+	z-index:2550;
+	background:url('../images/leftButton.png') center center no-repeat;
+	background-size:contain;
+}
+#error{
+	position:absolute;
+	pointer-events:none;
+}
+#endScreen{
+  	position:absolute;
+  	top:0px;
+  	left:0px;
+  	width:100%;
+  	heght:100%;
+  	background-color:red;
+  	color:black;
+	font-family:cursive;
+	text-align:center;
+}
+#pause-screen{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	text-align:center;
+	font-family:SimpleKindOfGirl;
+	z-index:999999;
+	background:url('../images/white66.png');
+	}
+#pause-screen a{
+	padding-top:100px;
+	color:black;
+	text-decoration:none;
+	display:block;
+	}
+#pause{
+	position:absolute;
+	bottom:0px;
+	left:70%;
+	z-index:99999;
+	}
+#oceanView{
+	position:absolute;
+	width:100%;
+	height:40%;
+	background:url('../images/oceanbottom.gif');
+	background-size:cover;
+	top:60%;
+	left:0px;
+	cursor-event:none;
+	z-index:3;
+	}
+#oceanView.stormy{
+	background:url('../images/stormy-oceanbottom.gif');
+	background-size:cover;
+	
+	}
+#blastScreen{
+	display:none;
+	position:absolute;
+	pointer-events:none;
+	top:0px;
+	left:0px;
+	background-color:red;
+	opacity:0.4;
+	z-index:999991;
+	background-size:cover;
+	}
+#AudioTag{
+	position:absolute;
+	z-index:-10000;
+	}	
+#PlayScreen{
+    overflow:hidden;
+    position:absolute;
+    top:0px;
+    left:0px;
+    cursor:crosshair; 
+}
+#blastScreen{
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:999999;
+    height:380px;
+    opacity:0.2;
+    pointer-events: none;
+    
+}
+#midRain{
+    position:fixed;
+    top:20%;
+    left:0px;
+    bottom:20%;
+    right:0;
+    /*background:url('images/midrange-rain.gif') no-repeat;  on special occasions */
+    z-index:2;
+    opacity:0.09;
+    pointer-events: none;
+}
+.stormy #midRain{
+	background:url('../images/midrange-rain.gif') center center;
+	
+}	

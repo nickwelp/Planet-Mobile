@@ -1,0 +1,377 @@
+<html>
+    <heAD>
+        <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <script src="cookieHandler.js"></script>
+        <script src="cordova-2.2.0.js"></script>
+        <script>
+            //END OF DB
+            GameCenter();
+            document.addEventListener('touchmove', function (e) {
+                                      e.preventDefault();
+                                      }, false);
+            var song;
+            function callMusic(){
+                song = new Media('audio/superhero.mp3').play();
+            }
+            function stopMusic(){
+	               window.plugins.AdMob.hideAd({
+                                            'isHidden': true
+                                            },
+                                            function(){},
+                                            function(){}
+                                            );
+             
+                //song.stop ***)))();
+              //  song.release(); ***)))
+            }
+            </script>
+            
+        <script src="script/jquery-1.7.2.js"></script>
+       <script>
+       flag0=0;
+       flag1=0;
+       flag2=0;
+       flag3 = 0;
+       flag4 = 0;
+       flag5 = 0;
+       
+(function($) {
+    $.fn.writeText = function(content) {
+	    
+        var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	            if(flag0==0){
+	            	$('#next').css("display","block");
+	            	//$("#dirt").writeText1("I've been battling Planet so long I've abandoned my nest!      ");
+			    flag0++;       
+	            	}
+	            }
+        }, 100);
+        
+    };
+
+})(jQuery);
+
+
+(function($) {
+    $.fn.writeText1 = function(content) {
+	   $('#dirt').html('');
+	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	            if(flag1==0){
+				$("#foxd").writeText2("You think because your nest is above the water you can't be found? Attack now!       ");
+				flag1++;
+				}
+				// 
+				            
+	            }
+        }, 100);
+        
+    };
+
+})(jQuery);
+	       
+(function($) {
+    $.fn.writeText2 = function(content) {
+	     $("#foxd").html("");
+	    $("#foxy").css("display","none");
+	    $("#fishy2").css("display","block");	
+	    
+	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	         if(flag2==0){
+			// 	$("#dirt").writeText3("Every marble you recover sends us back to that idiocy, life as an animal.      ");
+			
+		     
+		         $('#next').css("display","block");
+			 flag2++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+
+      $.fn.writeText3 = function(content) {
+	   	 $("#dirt").html("");
+		  $('#fishy').css('display','block');
+	    $('#birdH').css("display","none");
+	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	         if(flag3==0){
+				$("#foxd").writeText4("I don't recall being an idiot. I'm a fox. Foxes are renowned for their wit.      ");
+			
+		     
+		            // $('#next').css("display","block");
+			 flag3++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+
+      $.fn.writeText4 = function(content) {
+	   	 $("#foxd").html("");
+	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	         if(flag4==0){
+				$("#dirt").writeText5("A fox with a boyfriend. Do you think Brad will even remember you once he's a simple animal again?      ");
+			 flag4++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+
+      $.fn.writeText5 = function(content) {
+	   	 $("#dirt").html("");
+	   	 
+			   
+ 	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	         if(flag5==0){
+			
+				$("#foxd").writeText6("Yeah, actually, I do; we've been together a long time.  ....    ");
+		     
+//		             $('#next').css("display","block");
+			 flag5++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+    
+      $.fn.writeText6 = function(content) {
+	   	 $("#foxd").html("");
+	   	
+	   	 	   
+ 	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	         if(flag5==1){
+			
+				$("#foxd").writeText7("Still I wonder if taking the marbles back is the right thing.      ");
+		     
+			 flag5++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+    
+    
+      $.fn.writeText7 = function(content) {
+	   	$("#foxd").html("");   	 
+			   
+ 	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	         if(flag5==2){
+		     	
+				$("#dirt").writeText8("Attack! While his resolve is shaken!     ");
+		     
+		         
+		         //$('#next').css("display","block");
+			 flag5++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+    
+    
+      $.fn.writeText8 = function(content) {
+	   	 $("#dirt").html("");   	 
+			   
+ 	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{ 
+	         if(flag5==3){
+		        $('#next').css("display","block");
+			 	flag5++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+    
+      $.fn.writeText9 = function(content) {
+	   	 $("#dirt").html("");   	 
+		$('#fishy').css('display','block');
+		$('#turtley').css('display','none');
+				   
+ 	    var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	         if(flag5==4){
+			
+			//	$("#dirt").writeText9("You see, it is on.     ");
+		     
+		     $('#next').css("display","block");
+			 flag5++;          
+			 }
+	            }
+        }, 100);
+        
+    };
+    
+})(jQuery);    
+
+
+</script>
+    </head>
+    <style>
+                #skip{
+position:absolute;
+  left:0px;
+  top:100px;
+}
+    
+@font-face {
+	font-family: SimpleKindOfGirl;
+	src: url('SimpleKindOfGirl.ttf');
+}	    
+body{font-family: SimpleKindOfGirl;}
+
+ body,div,img{
+  margin:0px;
+  z-index:999;left:0px;
+  } 
+        a{position:absolute;left:0;top:0px;z-index:999999;}
+        .music{left:100px;}
+        #dialog{position:absolute; z-index:9999;
+        top:10px;
+        margin:auto;
+        width:70%;
+        
+        }
+		.other{
+			position:absolute;
+			left:50%;
+			bottom:0;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+			height:80%
+			}
+		.superFox{
+			position:absolute;
+			left:5%;
+			bottom:0px;
+height:70%;
+}
+#next{
+	font-family:SimpleKindOfGirl;
+	}
+#dialog{
+width:45%;
+margin-left:50%;
+  font-family:SimpleKindOfGirl;
+font-size:140%;
+text-shadow:1px 1px 1px #fff, -1px -1px 1px #fff;
+}
+
+
+#otherd{
+position:absolute;
+	margin-top:30px;
+  font-family:SimpleKindOfGirl;
+  width:30%;
+  font-size:140%;
+  text-shadow:1px 1px 1px #fff, -1px -1px 1px #fff;
+z-index:999999;
+
+  }
+
+.midscreen{
+margin-left:150px;
+
+}
+#birdH{
+	        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+
+	}
+.ii{
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+	
+	}
+            </style>
+    <body onload="">
+    	<script src="callAds.js"></script>
+        
+     <a id="next" href="level-021.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a><div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+        <div id="dialog"><span id="dirt"></span></div>
+        <div id="otherD"><span id="foxd"></span></div>
+        
+        <img src="images/fox-facial.gif" id="foxy" class="superFox" />
+        <img src="images/flyingsigh-face.gif" id="fishy2" class="superFox ii"  style="display:none;"   />
+        <img id="birdy" src="images/bird-face.gif" class="superFox" style="display:none;" />
+        <img src="images/flyingsigh-face.gif" id="fishy" class="other"  style="display:none;"   />
+        <img id="turtley" src="images/turtle-face.gif" class="other" style="display:none;" />
+        
+        <script>
+
+		$("#dirt").writeText("Oh holy heck that was close! Still greater challenges lie ahead! ... There through those rocks, the center of the storm!        ");
+		
+
+
+
+          //  song = new Media('audio/joanna.mp3');
+          //  song.play();
+          
+            window.setTimeout("callCreate()",500);
+               function skip(){
+	            $('#next').css('display','block');
+	            }	
+          
+        </script>
+    </body>
+</html>

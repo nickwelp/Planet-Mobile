@@ -1,0 +1,167 @@
+<html>
+    <heAD>
+        <!-- meta name = "viewport" content = "user-scalable=no,width=device-width" /   -->
+        <script src="GameCenterPlugin.js"></script><script src="cookieHandler.js" /></script>
+        <script src="cordova-1.9.0.js"></script>
+        <script src="initialize-db.js"></script>
+        <script src="initialize.js"></script>
+        <script>
+
+            
+            if(1===1){
+            
+                  var Sprites = new Array();
+                
+                var Sprites = new Array();Sprites.push({id:'widerock-61',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1200, z: 1200, x: -380, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-63',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1200, z: 1200, x: -140, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-75',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: -380, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-77',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 1800, z: 1800, x: -140, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-90',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: -260, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-92',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2200, z: 2200, x: -20, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-106',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2800, z: 2800, x: -260, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-108',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2800, z: 2800, x: -20, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-110',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2800, z: 2800, x: 220, y: 0, type: 'widerock' });
+                Sprites.push({id:'widerock-116',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -260, y: 0, type: 'widerock' });
+                Sprites.push({id:'redmarble-117',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 2900, z: 2900, x: -140, y: 0, type: 'redmarble' });
+                Sprites.push({id:'lightening-145',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3200, z: 3200, x: 100, y: 0, type: 'lightening' });
+                Sprites.push({id:'lightening-155',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3600, z: 3600, x: -380, y: 0, type: 'lightening' });
+                Sprites.push({id:'lightening-180',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 3800, z: 3800, x: 100, y: 0, type: 'lightening' });
+                Sprites.push({id:'lightening-195',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4400, z: 4400, x: -20, y: 0, type: 'lightening' });
+                Sprites.push({id:'lightening-196',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4400, z: 4400, x: 100, y: 0, type: 'lightening' });
+                Sprites.push({id:'flyingfish-206',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4500, z: 4500, x: -20, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'flyingfish-210',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 4500, z: 4500, x: 460, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'flyingfish-223',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5100, z: 5100, x: -20, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'flyingfish-227',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5100, z: 5100, x: 460, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'flyingfish-231',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5200, z: 5200, x: -260, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'flyingfish-234',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5200, z: 5200, x: 100, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'flyingfish-259',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 5900, z: 5900, x: -140, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'flyingfish-271',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6000, z: 6000, x: -20, y: 0, type: 'flyingfish' });
+                Sprites.push({id:'shark-279',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: -380, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-283',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6100, z: 6100, x: 100, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-291',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6200, z: 6200, x: -260, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-310',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6800, z: 6800, x: 100, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-318',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 6900, z: 6900, x: -260, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-352',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7200, z: 7200, x: -140, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-396',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: -140, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-399',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7600, z: 7600, x: 220, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-408',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: -20, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-412',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7700, z: 7700, x: 460, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-416',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: -380, y: 0, type: 'shark' });
+                Sprites.push({id:'shark-422',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 7800, z: 7800, x: 340, y: 0, type: 'shark' });
+                Sprites.push({id:'tornado-464',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8200, z: 8200, x: 00, y: 0, type: 'tornado' });
+                Sprites.push({id:'wave-464',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8300, z: 8300, x: -200, y: 0, type: 'bluewave' });
+                Sprites.push({id:'wave-461',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8310, z: 8310, x: 00, y: 0, type: 'bluewave' });
+                Sprites.push({id:'qave-464',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: 8900, z: 8900, x: 200, y: 0, type: 'bluewave' });
+                
+                LengthOfCourse = 9000;
+
+
+            
+            }//details level, sprites
+            
+           
+            
+            
+            
+           
+            </script>
+        
+        <script src="hurtFox.js"></script>
+        <script src="handleScores.js"></script>
+    
+        <script src="sprites.js"></script>
+        <script src="represent-fox.js"></script>
+        <script src="deathStuff.js"></script>
+        <script src="newOpponents.js"></script>
+        <script>
+            
+            function DisplayEnd(X){
+                clearInterval(intervalID);
+                song.stop();
+                song.release();
+             setData();
+                window.location = "story-027.html";
+                //window.location.reload();             
+                
+            }
+            
+            </script>
+            <script src="moveThings.js"></script>
+       <script src="spineAndControls.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </HEAD>
+    <body>
+        <div id="PlayScreen">
+            <div id="fox"><img id="foxavatar" src="images/fox.gif" /></div>
+             <div id="pause" onclick="PauseGame();"><img src="images/pause.png" /></div>
+            
+            <div id="blastScreen"></div>
+            <div id="blastScreen1"></div>
+            
+            <div id="midRain"></div>
+            
+            <div id="health"></div>
+            <div id="score"></div>
+            <div id="marble"></div>    <div id="error"></div><div id="endScreen" style="display:none;">Score: <span id="scoreTT"></span><br />Marbles: <span id="marblesTT"></span><br /><span id="nextLevel"></span></div>
+            
+            <div id="joyStick"  >
+                <div id="leftButton"  onclick="void(0);"></div>
+            </div>
+        </div> 
+        
+        <div id="start" ><a href="javascript:void(0);" onclick="Start();"><img src="images/intro-screen.png" /></a></div>
+        <div id='leftb'></div><div id='cenb'></div><div id='rightb'></div>
+        <div id="errorMonitor">
+        </div><div id="test">TESTR</div>
+        <script>
+            var touchable = 'createTouch' in document;
+            if(touchable) {
+                f('leftButton').addEventListener( 'touchstart', onTouchStart, false );
+                f('leftButton').addEventListener( 'touchmove', onTouchMove, false );
+                f('leftButton').addEventListener( 'touchend', onTouchEnd, false );
+                f('blastScreen').addEventListenr( 'touchstart2', onTouchStart, false);
+            }   
+            
+            </script>
+        <style>
+            
+            #PlayScreen{
+                width:480px;
+                height:320px;
+                
+                overflow:hidden;
+                position:absolute;
+                top:0px;
+                left:0px;
+                background-color:#b9fff3;
+                background:url('images/yellow-storm-ocean.jpg') no-repeat;
+                cursor:crosshair; 
+            }
+            
+            #blastScreen1{
+                position:absolute;
+                top:0px;
+                left:0px;
+                z-index:999999;
+                width:480px;
+                height:380px;
+                background:url('images/foreground-rain.gif');
+                opacity:0.2;
+                pointer-events: none;
+                
+            }
+            
+            #midRain{
+                position:absolute;
+                top:0px;
+                left:0px;
+                width:490px;
+                height:320px;
+                background:url('images/midrange-rain.gif') no-repeat;
+                z-index:2;
+                opacity:0.09;
+                pointer-events: none;
+                
+            }
+            
+            </style>

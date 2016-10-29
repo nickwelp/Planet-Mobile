@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>  
+    <head>
+        <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <!-- script src="cookieHandler.js"></script><script src="GameCenterPlugin.js" /></script>
+        <script src="cordova-2.2.0.js"></script -->
+        <link rel="stylesheet" type="text/css" href="css/boss_level.css" />
+    </head>
+    <body id="page_body" >
+        <div id="PlayScreen">
+            <div id="joyStick"  >
+                <div id="leftButton"  onclick="void(0);"></div>
+            </div>
+              
+            <div id="health"></div>
+            <div id="score"></div>
+            <div id="marble"></div> 
+            <div id="pause"></div>
+            <div id="fox"><img id="foxavatar" src="images/fox.gif" /></div>
+            
+          	<div id="AlongForRide0"><img src="images/cthulu.gif" id="Images0" /></div>            
+            <div id="AlongForRide1"><img src="images/cthulu.gif" id="Images1" /></div>
+            <div id="AlongForRide2"><img src="images/cthulu.gif" id="Images2" /></div>
+            <div id="AlongForRide3"><img src="images/cthulu.gif" id="Images3" /></div>
+            <div id="AlongForRide4"><img src="images/cthulu.gif" id="Images4" /></div>
+            <div id="AlongForRide5"><img src="images/cthulu.gif" id="Images5" /></div>
+            <div id="AlongForRide6"><img src="images/cthulu.gif" id="Images6" /></div>
+            <div id="AlongForRide7"><img src="images/cthulu.gif" id="Images7" /></div>
+            <div id="AlongForRide8"><img src="images/cthulu.gif" id="Images8" /></div>
+          
+            <div id="AlongForRide9"><img src="images/cthulu.gif" id="Images9" /></div>
+          <!--  <div id="AlongForRide10"><img src="images/cthulu.gif" id="Images10" /></div>
+            <div id="AlongForRide11"><img src="images/cthulu.gif" id="Images11" /></div>
+            <div id="AlongForRide12"><img src="images/cthulu.gif" id="Images12" /></div>
+            <div id="AlongForRide13"><img src="images/cthulu.gif" id="Images13" /></div>
+            <div id="AlongForRide14"><img src="images/cthulu.gif" id="Images14" /></div>
+            <div id="AlongForRide15"><img src="images/cthulu.gif" id="Images15" /></div>
+            <div id="AlongForRide16"><img src="images/cthulu.gif" id="Images16" /></div>
+            <div id="AlongForRide17"><img src="images/cthulu.gif" id="Images17" /></div>
+           	-->
+            <div id="NewRide0" style="display:none;" ><img src="images/cthulu.gif"  id="Img0" /></div>            
+            <div id="NewRide1" style="display:none;" ><img src="images/cthulu.gif"  id="Img1" /></div>
+            <div id="NewRide2" style="display:none;" ><img src="images/cthulu.gif"  id="Img2" /></div>
+            <div id="NewRide3" style="display:none;" ><img src="images/cthulu.gif"  id="Img3" /></div>
+            <div id="NewRide4" style="display:none;" ><img src="images/cthulu.gif"  id="Img4" /></div>
+            <div id="NewRide5" style="display:none;" ><img src="images/cthulu.gif"  id="Img5" /></div>
+            <div id="NewRide6" style="display:none;" ><img src="images/cthulu.gif"  id="Img6" /></div>
+            <div id="NewRide7" style="display:none;" ><img src="images/cthulu.gif"  id="Img7" /></div>
+            <div id="NewRide8" style="display:none;" ><img src="images/cthulu.gif"  id="Img8" /></div>
+            
+            <div id="NewRide9" style="display:none;" ><img src="images/cthulu.gif"  id="Img9" /></div>
+           <!-- <div id="NewRide10"style="display:none;"  ><img src="images/cthulu.gif" id="Img10" /></div>
+            <div id="NewRide11"style="display:none;"  ><img src="images/cthulu.gif" id="Img11" /></div>
+            <div id="NewRide12"style="display:none;"  ><img src="images/cthulu.gif" id="Img12" /></div>
+            <div id="NewRide13"style="display:none;"  ><img src="images/cthulu.gif" id="Img13" /></div>
+            <div id="NewRide14"style="display:none;"  ><img src="images/cthulu.gif" id="Img14" /></div>
+            <div id="NewRide15"style="display:none;"  ><img src="images/cthulu.gif" id="Img15" /></div>
+            <div id="NewRide16"style="display:none;"  ><img src="images/cthulu.gif" id="Img16" /></div>
+            <div id="NewRide17"style="display:none;"  ><img src="images/cthulu.gif" id="Img17" /></div>       
+            -->
+            <div id="boss" ><img src="images/boss.gif" /></div>                       
+            <div id="health"></div>
+            <div id="score"></div>
+            <div id="marble"></div>    
+            <div id="error"></div>
+            <div id="endScreen" style="display:none;">
+                Score: <span id="scoreTT"></span>
+                <br />Marbles: <span id="marblesTT"></span>
+                <br /><span id="nextLevel"></span>
+            </div>
+            <div id="blastScreen"></div>
+            
+        </div> 
+        
+        <div id="start" >&nbsp;</div>
+        <div id="errorMonitor"></div>
+        <div id="test">TESTR</div>
+        <audio id="audioTag" controls></audio>
+        <script src="js/boss_level.js" ></script>
+    </body>
+</html>

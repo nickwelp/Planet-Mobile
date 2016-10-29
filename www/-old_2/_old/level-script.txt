@@ -1,0 +1,357 @@
+<?
+/*
+Earth loses it's stars
+where did the stars go
+Planet what happened?
+I lost my marbles and cannont get them back
+
+Hi Ishtar I have not seen your marbles
+but you seem lost 
+and you asked for me by name
+I'll help you
+
+Thank you!
+I was beginning to lose my mind!
+Find all my marbles, look out for my enemies
+
+and now at last,
+take my windsurf board to guide you!
+*/
+/* Initialize the Javascript Object Array. This holds all sprites    */
+echo "var Sprites = new Array();";
+
+//$Level1 = ".......0w000000......0l000000.....0h000000......0f000000......0z000000.......0b000b000b.......0q000000000..00000o0000.0000o0o00000.....s0c0c0c0cs.srcr0rcr0s.s0r0r0r0rs.sr0r0r0r0s.s0r0r0r0rs.sr0r0r0r0s.s0r0r0r0rs.sr0r0r0r0s.s0r0r0r0rs.sr0r0r0r0s.s000i000s.sr0r0rbr0s.s0r0r0r0rs.sr0r0r0r0s.s0r0r0r0rs.sr0rbr0rbs.sor0r0r0rs.sr0r0r0r0s.s0r0r0r0rs.sr0r0r0rbs.s0r0r0r0rs.sr0rbr0r0s.sbr0r0r0rs.sr0ror0r0s.s0r0r0r0rs.sr0r0r0r0s.s0rbr0r0rs.sr0ror0rbs.s0r0r0r0rs.sr0rbr0r0s.s0r0r0r0rs.sr0r0r0r0s.s0r0rtr0rs.sr0rtrtr0s.s0r0ror0rs.sr0r0r0r0s.s0r0r0r0rs.srbror0r0s.sbrbr0r0rs.sror0r0r0s.s0r0r0r0rs.sr0r0rbr0s.s0r0rtrtrs.sr0r0ror0s.sbr0r0r0rs.sr0r0r0r0s.s0rbr000rs.sror0r0r0s.s0r0r0r0rs.sr0rbr0r0s.s0r0r0r0rs.sr0r0r0b0s.s0r0r0rors.srbrbrbr0s.s0r0r0r0rs.sr0rbrbrbs.s0r0r0rors.sr0r0r0r0s.sbrbrbr0rs.sr0r0ror0s.sr0rbrbrbs.s0rbrbrbrs.sr0ror0r0s.s00000000s.s0c0c0c0cs.sc0c0c0c0s.s0c0c0c0cs.sc0c0c0c0s.s0bcb0ccbs.s0cbc0bc0s.sccc0tcccs.
+
+
+$Level1
+
+A bird speaks -- so you think you can recover Ishtar's marbles eh? What fool are you such that you'd try your luck against us? 
+
+$Level2
+
+A bird speaks - you did well there but there are many challenges ahead. A whimpy fox like you is no match for the Gizzard Gang!
+
+
+$Level3 
+
+A wizard appears!
+Level4 first bonus level
+
+A bird speaks you think this is over? Our friends the flying fish will take care of you!
+
+$Level5
+
+Flying Fish: so Planet the Fox can dodge! We'll work up a storm!
+
+$Level6
+
+Flying fish: Round and round Planet Fox goes, when will he fold, no one knows. Brother you sure are tough to beat. Try this!
+
+$Level7
+
+Level 8 bonus level
+
+//Turtle: I will end this Foxy threat; we turtles will seek you out and bash you with our shells!
+//Fox: why are you guys so mean anyway?
+//Turtle, Fish and Bird: Big ?
+
+//note add Turlte seek out fox left to right; 
+// add birds move around left to right in predictable pattern
+
+$Level9 
+
+Turtle: You are tough
+//Fox: Thanks, but you don't have to keep testing me
+//Bird: no we're going to keep smashing you!
+//Bird: Why don't you run home to your vixen!
+//Fox: actually, I'm gay.
+//FlyingFish: So? Get him!
+
+$Level10 
+
+//Turtle: This is lame I'm going home
+//Bird: You can't leave! We just about have him beat!
+//Turtle: I don't care. This is a drag. Turtles are very ancient and we yearn for the old ways.
+//Fish: There can be no leaving!
+//Fox: The old ways?
+//Turtle: Yes you fool! Ishtar lost her marbles and we animals gained our minds!
+//Bird: Yes you see, if you take back all the marbles, it will be we who loose our minds!
+//Turtle: Bah eating, mating and swimming, life was better than you remember. I'm leaving.
+//[JUST THEN A GIANT TENTCLE ENSARES TURTLE AND PULLS HIM BELOW THE WAVES]
+//FISH: you see, it's on.
+
+//$Level11: heavy on birds, flying fish and tentecles. 
+
+//a wizard: I am a wizard
+//$Level12 bonus level
+
+//FISH: Storm is coming. You will drown. 
+//BIRD: Ha ha ha, Planet Foxy is too far our to sea! 
+//FISH: You're in deep water now. Things are different here.
+//add: sea weed patches you jump over; 
+
+//$Level13 = lots of jumping over sea weed patches; flying fish storms
+
+//Fox: what is this old ways?
+//Bird: before we had language and were anthropromophised you fool!
+//Fish: Every marble you recover sends us back to that idiocy.
+//Fox: I don't recall being an idiot. I'm a fox. 
+//Fish: A fox with a boyfriend. Do you think he'll even remember you once a simple animal again?
+//Fox: yeah, actually, I do; we've been together a long time. Still I wonder if taking the marbles back is the right thing.
+//Fish: attqack! while his resolve is shaken!
+
+//$Level14 = bird cirling and attacking
+
+
+//Bird: Tell of your love Fox; I too have a love, and I miss her. I've been battling Planet so long I've abandoned my nest!
+//Fish: You think because your nest is above the water you can't be found? Attack now!
+
+//$Level15 = flying fish, birds, lots of em
+
+//Bird: I'm through. This bites. I didn't have to pay taxes when i was a dumb animal.
+//Fish: Do you think you can quit? Not when I call upon my master, the Cthulu!
+//[FISH transforms in to a cthulu priest]
+//FISHPREIST: I summon a storm the likes of which the world has never known, from the reality warping powers of the he who lurks beneath the waves!
+//Bird: He'll destroy this whole ocean! This storm is too big! The fish threatens the whole world. I can't reach the center, but with your trianglur sale you can sail in to the headwind! Reach the center and disrupt the cyclone!
+//{THE WIND IS TOO FEIRCE AND BLOWS THE PARTY UP; FOX IS THROWN IN TO THE AIR AND FALLS THROUGH THE SKY and LANDS IN THE WATER, CLINGING TO HIS BOARD TO SAVE HIMSELF FROM DROWNING. TEMPRATURES DROP RAPIDLY AND FOX BEGINS TO SHIVER. HE'S FEARS HE IS DOOMED. ITS GETTING COLDER.
+//FOX: I don't even know where I am, or which way to go.
+//[A DESERTED ISLAND]
+//FOX: I'll camp there. 
+
+//Level 16: Fox clutches board, swims to shore, dodging waves //alternative icon level
+
+//FOX SETS UP CAMP BUT IS TOO SCARED TO LIGHT A FIRE. HE BURROWS IN TO A SMALL CAVE HE FOUND, AND HIDES HIS BOARD. HE WANTS TO TRY AND FIX IT IN THE MORNING< BUT HE NEEDS SLEEP RIGHT NOW.
+//INSTEAD OF SLEEP, DOUBT AND RUMINATION CREEP IN.
+
+//How did I even get involved? I'm always helping other people but obviously I need to start thinking more. Heck this is always my problem in relationships, seems like even with my friends I'm burning myself out to go above and beyond for them but I really just don't get enough back. Look at me, windsurfing around the world trying to help some strange cosmic woman. I'm libel to catch the flu. I don't even know where I am, I'm cold wet and hungry. And what about Brad? If that storm gets any stronger, the whole world will be in as much peril as I am. I hope he's burrowed up safe.
+
+//FOX DREAMS. 
+//Level 17: Bonus Level
+
+//Fox: Brad, Brad, is that you? [siholotee of a fox] Yes Planet! You don't have to fret! I struck a deal! [Silohette grows tentacles] Warping reality has it's side effects! Join us! Join us or die!
+//FoX: AHHHH! Wakes up
+//Fox: My board, it's fixed!
+//Bird: it sure is. I've been working on it all night.
+//Fox: Osprey! You helped me?
+//Bird: Yes, I need you to save us, because I can not do it myself. I broke my wing last night, landing on that rocky shore. You must go to the center of the storm and confront the typhoon within. 
+//Fox: ...
+
+
+//Level 18: Long, lonely yellow storm, avoid lightening clouds, seaweed
+
+
+
+//Fox: man I'm a long way from anywhere out here. How do I find the center of the storm? I guess which ever path is hardest is the way to go.
+Out here on the water, I am so isolated, and so far from land. I've never felt so alone.
+//Bird: There's more. The Cthulu have been pulling Ishtar's marbles in to their reality. As long as they hold her marbles there, they have an anchor in to our world. You need to go in to their reality and bring them back.
+//Fox: How can I possibly find them in their reality?
+
+
+
+//Shark: Hey look at that tasty morsel, swimming all on his lonesome, way out here! Lunch!
+
+//ADD Debries, seaweed
+//Level19: Long, dodge rocks and sharks
+
+//Shark: That guy was pretty good, but I've got a lot to offer a hunt
+
+//Level20: longer, seaweed, waves and sharks, debris 
+//FOX: Oh holy heck that was close! Still greater challenges lie ahead!, there through those rocks, the center of the storm 
+
+//Level21: Lightening clouds, rocks, sharks, long
+
+//Fish! Is that Planet Fox?! Oh no how did he get so close! Attack!
+
+//Level22: Lightening clouds, rocks, sharks, long, fish
+
+//ADD fish vary x left to right 
+//Level23: Lightening clouds, rocks, sharks, long, fish
+
+//level24: Bonus Level
+
+//Level25: Lightening clouds, rocks, sharks, long, fish
+
+//level26 defeat cyclone, who hurls waves of sharks and flying fish at you
+
+//Fox: hey the sun is coming out! What, look at that, all ripe for the claiming!
+//FISH: No, you may of stopped the cyclone but we'll stop you
+
+//Level27[storm disappates, Mountain Terrain], a whole slew of marbles are revealed; fish try to stop you as your romp; tentcales, open ocean (seaweed)
+
+//FOX: That wasn't so hard. You'll have to try harder flying fish!
+//Fish: Ok, we will. Omigari Platu Nickto 
+//[A mighty monster arises from the sea]
+
+//level28 - defeeat a cthule boss in the ocean; cirlcing tentcle arm level
+
+//Fox: I've defeated their vanguard on earth, but the real victory can only be had on the other side of that gate! Perhaps I will miss being a man! But given what I know of animals, I doubt it!
+
+//level29 through the gateway in to the warp
+//NEW ENEMIES -- flying jelly fish. Spinning octopuses, Tentacle thing a ma jigs, black spheres that radiate energy
+
+FOX: it alternates between engorged fires and cold blasts; this plane is twisted, and in some cases, the creatures move in a direction I cannot understand. Still there is a great store of marbles ahead; my board knows the way.
+
+//level 30 long battle, than a large horde of marbles
+
+//FOX: What was this? A trap?
+//Octopus: hahaha we got you [FOX in TENTACLES]
+//hours later...
+//Planet, is that you? 
+//Wake up...
+//wake up...
+//wake up...
+
+//Fox ...Am I dead?...
+
+//Turtle: Wake up my friend. 
+//Fox: no, I'm dead, I see things that can't be real. Let me sleep forever.
+
+//Turtle: nonsese, my friend. Fate chose us to be here. 
+
+//Fox: they took all the marbles. All the marbles; the ones I collected on earth, the few I'd recovered from here.
+//Turtle: Then all is lost it seems...
+
+//[The Jail Cell Opens]
+
+//FISH: Hurry, both of you!
+//Fox, Turtle: Flying Fish!
+
+//[Flying Fish transforms... in to a Sword fish!]
+//Fox: you were a Swordfish all along!
+//Swordfish: That's right! Captain of the Guards of Reality! 
+//Once again my journeys take me to the very edge of what is real!
+//Fox: I had all but given up!
+
+//Swordfish: I tell you what! When you're fighting for good, you'll never run out of friends!
+//Turtle: Yes, even among your former enemies.
+//Swordfish: Now, we have no time!
+//The Cthulu have taken all the marbles and merged them in to one. This is our last chance to grab it before the marble permanently joins this reality.
+
+
+//The unlikely band fled the prison on the cthulu, reaching the last barricade to the great ocean of chaos.
+
+//Swordfish: Turtle -- we're trapped here. Only you have the improbable strength to lift this door. 
+//Turtle: I will try my friends.  *herg* *herk*
+[THE DOOR LIFTS]
+//SWORDFISH: Turtle you did it! Ok Planet! 
+//Swordfish: This is as far as I can go! My transdimensional adventures make me a risk to the mission. The cthulu can sense me.
+//But you're Planet Fox! They can't sense you. You must surf through the gauntlet of their sentries and seize the marble at the end. Remember the marble is full of power so you must leap in to the air when you grab it. You all your Fox-wits. After you snag the prize, escape back through the gate. If you make it, the Cthulu's grip on our realities will be destroyed. Turtle and I will be lost here forever, but the Earth will be saved.
+//Turtle: it is a fitting punishment for the evils I commited earlier.
+//Fox: It's not punishment Turtle, it's heroism. I'm ready.
+
+//level 31, shooting through gaps to get to one last marble and then shooting gaps to get to exit
+
+//Bird (in bandages): Planet Fox! You made it! 
+//Fox: I never thought I'd see you again! Let alone, this world!
+//Fox: but my victory comes with a heavy price. I left Swordfish and Turtle behind.
+//Bird: Those fool turtles, they always go in for self sacrafice!
+
+[ISHTAR APPEARS!] 
+//ISHTAR: Fox! Yo have returned my marbles! And thus your humanity is back in my hands. The Cthulu are a human problem, and now, no problem of mine!
+[Turtle and SwordFish reappear!]
+//Ishtar: and now, my guardians of reality, I must bid you farewell. I will return you to the reality from which I chose you.
+//Except you Planet Fox. I have one last need of you.
+
+//Fly through space, putting the stars back in the sky
+//Level 32 - putting the stars in the sky
+
+
+
+function SpitOutLevels($LevelX, $title){
+	
+echo $title ."\n\n";	
+ $LE = str_split($LevelX); //get the level element7s
+$ground = 100;
+$x=0;
+for($r=0;$r<=sizeOF($LE);$r++){
+	if($LE[$r]=='s'){
+			$namer = "sunorb";
+			$rflag=1;
+	}else if($LE[$r] == "r"){$namer = "rock";
+		$rflag=1;}
+	else if($LE[$r] == "n"){$namer = "tornado";
+		$rflag=1;}
+	else if($LE[$r] == "y"){$namer = "flyingfish";
+		$rflag=1;}
+	else if($LE[$r] == "e"){$namer = "lightening";
+		$rflag=1;}
+	else if($LE[$r] == "+"){$namer = "shark";
+		$rflag=1;}
+	else if($LE[$r] == "*"){$namer = "widerock";
+		$rflag=1;}								
+	else if($LE[$r] == "b"){$namer = "bird";
+		$rflag=1;}
+	else if($LE[$r] == "t"){$namer = "turtle";
+		$rflag=1;}
+	else if($LE[$r] == "o"){$namer = "redmarble";
+		$rflag=1;}
+	else if($LE[$r] == "O"){$namer = "bluemarble";
+		$rflag=1;}	
+	else if($LE[$r] == "Q"){$namer = "ishtar";
+		$rflag=1;}
+	else if($LE[$r] == "c"){$namer = "cthulu";
+		$rflag=1;}
+	else if($LE[$r] == "g"){$namer = "thanks";
+		$rflag=1;}
+	else if($LE[$r] == "k"){$namer = "code";
+		$rflag=1;}
+	else if($LE[$r] == "w"){$namer = "welcome";
+		$rflag=1;}
+	else if($LE[$r] == "l"){$namer = "bluewave";
+		$rflag=1;}
+	else if($LE[$r] == "h"){$namer = "right";
+		$rflag=1;}
+	else if($LE[$r] == "f"){$namer = "forward";
+		$rflag=1;}
+	else if($LE[$r] == "z"){$namer = "zap";
+		$rflag=1;}
+	else if($LE[$r] == "q"){$namer = "getem";
+		$rflag=1;}
+	else if($LE[$r] == "v"){$namer = "getem";
+		$rflag=1;}			
+	else if($LE[$r] == "."){$ground = $ground + 100;
+		$x = 0;
+		}
+	$xdist = $x*120; //set width 
+					//100 is hard
+					//120 is medium 
+					//200 is easy
+	$xdist = $xdist - 740;
+	if($rflag==1){
+		echo "Sprites.push({id:'".$namer."-".$r."',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: ".$ground.", z: ".$ground.", x: ".$xdist.", y: 0, type: '".$namer."' });\n";		
+		}
+	$rflag = 0;
+	$x++;
+	}     
+	/*
+for($s=50;$s<=$ground;$s=$s+100){
+	    $e= rand  (  30  ,  500  );
+	    $ne = -1 * $e;
+		echo "Sprites.push({id:'snow-".$s."',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: ".$s.", z: ".$s.", x: ".$e.", y: 550, type: 'snow' });\n";		
+		echo "Sprites.push({id:'snow-".$r."',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: ".$s.", z: ".$s.", x: 0, y: 550, type: 'snow' });\n";		
+		echo "Sprites.push({id:'snow-".$r."',ow: 0, oh: 0, width: 0, src: 'o', die: 0, flag: 0, death: 0, height: 0, zq: ".$s.", z: ".$s.", x: ".$ne.", y: 550, type: 'snow' });\n";		
+	
+	
+	}
+	*/
+echo "LengthOfCourse = ".$ground.";";
+
+
+}
+?>
+
+
+
+<?
+SpitOutLevels($Level1, "Level 1");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level2, "Level 2");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level3, "Level 3");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level4, "Level 4");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level5, "Level 5");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level6, "Level 6");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level7, "Level 7");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level8, "Level 8");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level9, "Level 9");echo "<br /> <h2>break</h2><br />\n\n\n";
+SpitOutLevels($Level10,"Level 10");echo "<br /> <h2>break</h2><br />\n\n\n";
+
+                                ?>

@@ -1,0 +1,122 @@
+<html>
+    <heAD>
+        <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <script src="cookieHandler.js"></script>
+        <script src="cordova-2.2.0.js"></script>
+        <script>
+            //END OF DB
+            GameCenter();
+            document.addEventListener('touchmove', function (e) {
+                                      e.preventDefault();
+                                      }, false);
+            var song;
+            function callMusic(){
+                song = new Media('audio/superhero.mp3').play();
+            }
+            function stopMusic(){
+	               window.plugins.AdMob.hideAd({
+                                            'isHidden': true
+                                            },
+                                            function(){},
+                                            function(){}
+                                            );
+             
+                //song.stop ***)))();
+              //  song.release(); ***)))
+            }
+            </script>
+            
+        <script src="script/jquery-1.7.2.js"></script>
+       <script>
+(function($) {
+    $.fn.writeText = function(content) {
+        var contentArray = content.split(""),
+            current = 0,
+            elem = this;
+        setInterval(function() {
+            if(current < contentArray.length) {
+                elem.text(elem.text() + contentArray[current++]);
+            }else{
+	            $('#next').css("display","block");
+	            }
+        }, 100);
+        
+    };
+
+})(jQuery);
+
+</script>
+    </head>
+    <style>
+    #skip{
+position:absolute;
+  left:0px;
+  top:100px;
+}
+    
+@font-face {
+	font-family: SimpleKindOfGirl;
+	src: url('SimpleKindOfGirl.ttf');
+}	    
+body{font-family: SimpleKindOfGirl;}
+
+ body,div,img{
+  margin:0px;
+  z-index:999;left:0px;
+  } 
+        a{position:absolute;left:0;top:0px;z-index:999999;}
+        .music{left:100px;}
+        #dialog{position:absolute; z-index:9999;
+        top:10px;
+        margin:auto;
+        width:70%;
+        
+        }
+		.other{
+			position:absolute;
+			left:50%;
+			bottom:0;
+			height:80%
+			}
+		.superFox{
+			position:absolute;
+			left:5%;
+			bottom:0px;
+height:70%;
+}
+#next{
+	font-family:SimpleKindOfGirl;
+	}
+#dialog{
+width:45%;
+margin-left:50%;
+  font-family:SimpleKindOfGirl;
+font-size:140%;
+text-shadow:1px 1px 1px #fff, -1px -1px 1px #fff;
+}
+
+
+        
+            </style>
+    <body onload="">
+    	<script src="callAds.js"></script>
+        
+     <a id="next" href="level-007.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a><div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+        <div id="dialog"><span id="dirt"></span></div>
+        <img src="images/fox-facial.gif" class="superFox" />
+        <img src="images/flyingsigh-face.gif" class="other" />
+        <script>
+
+		$("#dirt").writeText("Round and round Planet Fox goes, when will he fold, no one knows. Brother you sure are tough to beat. Try this!");
+          
+          //  song = new Media('audio/joanna.mp3');
+          //  song.play();
+          
+            window.setTimeout("callCreate()",500);
+               function skip(){
+	            $('#next').css('display','block');
+	            }	
+          
+        </script>
+    </body>
+</html>

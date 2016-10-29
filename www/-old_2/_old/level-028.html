@@ -1,0 +1,547 @@
+<html>
+    <heAD>
+        <meta name="viewport" content="user-scalable=no,width=device-width" />
+        <script src="GameCenterPlugin.js"></script><script src="cookieHandler.js" /></script>
+        <script src="cordova-2.2.0.js"></script>
+        <scr ipt src="initialize-db.js"></scr ipt>
+        <scr ipt src="initialize.js"></scr ipt>
+        <style>
+        
+         #AlongForRide0{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	    	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+         #AlongForRide1{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	    	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide2{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide3{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide4{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide5{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide6{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide7{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide8{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide9{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide10{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide11{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide12{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide13{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide14{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide15{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide16{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide17{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide18{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+               #errorMonitor{
+	               position:absolute;
+	               left:500px;
+	               color:red;
+	               }
+        </style>
+        <script>
+        	var di = new Date();
+        	var timeAtStart;
+			var cyc = 0;
+
+        	list_of_arms = new Array("AlongForRide0", "AlongForRide1", "AlongForRide2", "AlongForRide3", "AlongForRide4", "AlongForRide5", "AlongForRide6", "AlongForRide7", "AlongForRide8", "AlongForRide9", "AlongForRide10", "AlongForRide11", "AlongForRide12", "AlongForRide13", "AlongForRide14", "AlongForRide15", "AlongForRide16", "AlongForRide17"); 
+        	var deltaTouch =0;
+        	function onTouchStart(event) {
+			//  window.deltaTouch = event.touches[0].clientX - 71;
+			    window.deltaTouch = 30;
+			}
+			
+			function onTouchMove(event) {
+			  //  window.deltaTouch = event.touches[0].clientX - 71; 
+			    window.deltaTouch=0;
+			} 
+			
+			function onTouchEnd(event) { 
+			    window.deltaTouch = 0;
+			}
+        
+        function f(a){
+	        ffg = document.getElementById(a);
+	        return ffg;
+	        
+	        }
+        
+		function getOff(NameOfWindow)
+            {	
+               return 390;
+	             //x32 = document.getElementById(NameOfWindow);
+               // return x32.offsetWidth - 70;
+                
+            }
+            
+            function getOffY(NameOfWindow)
+            {
+	            return 320;
+              //  x33 = document.getElementById(NameOfWindow);
+             //   return (x33.offsetHeight*1);
+                
+            }
+  
+         
+            var NumberOfObjects = 10;//9;//18;    
+            var Sine = new Array();
+            var Cose = new Array();
+            var PiConvert = new Array();
+            var Degrees = new Array();
+            var SizeOfFont = new Array();
+            var XPlace = new Array();
+            var YPlace = new Array();
+            var d = new Array();
+            var Constant1 = 360/NumberOfObjects;
+            var WindowWidth = getOff('PlayScreen');
+            var WindowHeight = getOffY('PlayScreen');
+            var Velocity = 1;
+            var eImage = new Array();
+ 		    var Opac = new Array();
+        	  
+            
+            
+            
+            for(counter=0;counter<=360;counter++){
+                PiConvert[counter] = counter * ( Math.PI/180);
+                Sine[counter] = Math.sin(PiConvert[counter]);
+                Cose[counter] = Math.cos(PiConvert[counter]);
+                SizeOfFont[counter] = ((Math.round(50 + (Cose[counter]*25)) * 100)/100) + "px";//spinning objects width
+                XPlace[counter] = 20 + (Math.round((Sine[counter] * ((WindowWidth/2)) + ((WindowWidth/2)))));
+                YPlace[counter] = (Math.round((Sine[counter] * (WindowHeight/2)+(WindowHeight/2)))) + 20;
+               }	
+            </script>
+        
+        <script src="shurtFox.js"></script>
+        <script src="shandleScores.js"></script>
+    
+        <script src="ssprites.js"></script>
+        <script>
+        var FoxX = 125;   //Intial X value of the fox's sprite
+
+		function RepresentFox(){
+			var moveScale = deltaTouch + deltaTouch;
+			moveScale = moveScale/10;
+			FoxX = FoxX + moveScale;
+			if(FoxX<-80){FoxX = -80;}  
+    		if(FoxX>450){FoxX = 450;}
+    		f('fox').style.left=FoxX;
+        	
+        	
+        	if(moveScale<0){
+    	   	 	f('foxavatar').src = "images/fox-left.gif";
+        	    window.foxFlag = 1;
+        	    }else if(moveScale>0){
+        	    f('foxavatar').src = "images/fox-right.gif";
+        	    window.foxFlag = 1;
+        	    }else if(window.foxFlag==1){
+        	    f('foxavatar').src = "images/fox.gif"; 
+        	    window.foxFlag = 0;
+        	    }
+        	   
+        	
+        	    f('fox').style.zIndex=200;
+       } //draws fox each frame he need it; motion left right and meta values there of
+
+       </script>
+        
+        
+        <script src="sdeathStuff.js"></script>
+        <script src="snewOpponents.js"></script>
+        <script>
+             CountSpeed=1;
+              var w = 0; 
+              var wy = 0;
+            function GoLeft(){
+	            timeAtStart = di.getTime();
+	            f('start').style.display="none";
+                IntervalID = setInterval("MovingX(-1)", 40);
+            }
+            function DisplayEnd(X){
+                clearInterval(intervalID);
+                song.stop();
+              song.release();
+           	  	setData();
+                callEndOfLevel("story-029.html");
+                //window.location.reload();             
+                
+            }
+            
+            </script>
+       
+         <link rel="stylesheet" type="text/css" href="style.css" />
+    </HEAD>
+    <body>
+        <div id="PlayScreen">
+            <div id="fox"><img id="foxavatar" src="images/fox.gif" /></div>
+            
+          	<div id="AlongForRide0" onmouseover="" ><img src="images/cthulu.gif" id="Images0" /></div>            
+            <div id="AlongForRide1" onmouseover="" ><img src="images/cthulu.gif" id="Images1" /></div>
+            <div id="AlongForRide2" onmouseover="" ><img src="images/cthulu.gif" id="Images2" /></div>
+            <div id="AlongForRide3" onmouseover="" ><img src="images/cthulu.gif" id="Images3" /></div>
+            <div id="AlongForRide4" onmouseover="" ><img src="images/cthulu.gif" id="Images4" /></div>
+            <div id="AlongForRide5" onmouseover="" ><img src="images/cthulu.gif" id="Images5" /></div>
+            <div id="AlongForRide6" onmouseover="" ><img src="images/cthulu.gif" id="Images6" /></div>
+            <div id="AlongForRide7" onmouseover="" ><img src="images/cthulu.gif" id="Images7" /></div>
+            <div id="AlongForRide8" onmouseover="" ><img src="images/cthulu.gif" id="Images8" /></div>
+          
+            <div id="AlongForRide9" onmouseover="" ><img src="images/cthulu.gif" id="Images9" /></div>
+          <!--  <div id="AlongForRide10" onmouseover="" ><img src="images/cthulu.gif" id="Images10" /></div>
+            <div id="AlongForRide11" onmouseover="" ><img src="images/cthulu.gif" id="Images11" /></div>
+            <div id="AlongForRide12" onmouseover="" ><img src="images/cthulu.gif" id="Images12" /></div>
+            <div id="AlongForRide13" onmouseover="" ><img src="images/cthulu.gif" id="Images13" /></div>
+            <div id="AlongForRide14" onmouseover="" ><img src="images/cthulu.gif" id="Images14" /></div>
+            <div id="AlongForRide15" onmouseover="" ><img src="images/cthulu.gif" id="Images15" /></div>
+            <div id="AlongForRide16" onmouseover="" ><img src="images/cthulu.gif" id="Images16" /></div>
+            <div id="AlongForRide17" onmouseover="" ><img src="images/cthulu.gif" id="Images17" /></div>
+           	-->
+            <div id="NewRide0" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img0" /></div>            
+            <div id="NewRide1" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img1" /></div>
+            <div id="NewRide2" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img2" /></div>
+            <div id="NewRide3" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img3" /></div>
+            <div id="NewRide4" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img4" /></div>
+            <div id="NewRide5" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img5" /></div>
+            <div id="NewRide6" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img6" /></div>
+            <div id="NewRide7" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img7" /></div>
+            <div id="NewRide8" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img8" /></div>
+            
+            <div id="NewRide9" onmouseover=""  style="display:none;" ><img src="images/cthulu.gif"  id="Img9" /></div>
+           <!-- <div id="NewRide10" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img10" /></div>
+            <div id="NewRide11" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img11" /></div>
+            <div id="NewRide12" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img12" /></div>
+            <div id="NewRide13" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img13" /></div>
+            <div id="NewRide14" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img14" /></div>
+            <div id="NewRide15" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img15" /></div>
+            <div id="NewRide16" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img16" /></div>
+            <div id="NewRide17" onmouseover="" style="display:none;"  ><img src="images/cthulu.gif" id="Img17" /></div>
+          
+            
+            -->
+            
+            
+            
+            <div id="boss" onmouseover="" ><img src="images/boss.gif" /></div>                       
+            
+            
+            
+            
+              
+            <div id="health"></div>
+            <div id="score"></div>
+            <div id="marble"></div>    <div id="error"></div><div id="endScreen" style="display:none;">Score: <span id="scoreTT"></span><br />Marbles: <span id="marblesTT"></span><br /><span id="nextLevel"></span></div>
+            <div id="error"></div><div id="endScreen" style="display:none;">Score: <span id="scoreTT"></span><br />Marbles: <span id="marblesTT"></span><br /><span id="nextLevel"></span></div>
+            <div id="joyStick"  >
+                <div id="leftButton" onmouseover="onTouchStart('f');" onmouseout="onTouchMove('g');"  onclick="void(0);"></div>
+            </div>
+        </div> 
+        
+        <div id="start" ><a href="javascript:void(0);" onclick="GoLeft();"><img src="images/intro-screen.png" /></a></div>
+        <div id='leftb'></div><div id='cenb'></div><div id='rightb'></div>
+        <div id="errorMonitor">
+        </div><div id="test">TESTR</div>
+        <style>#AlongForRide0{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	    	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+         #AlongForRide1{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	    	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide2{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide3{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide4{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide5{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide6{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide7{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide8{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide9{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;		top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide10{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide11{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide12{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide13{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide14{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide15{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide16{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide17{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+                #AlongForRide18{	padding:0px;	opacity:1;filter:alpha(opacity=100);	z-index:1;font-family: serif;	top:110px;color:white;position:absolute;//background-color:#3399ff;font-size:2em;font-weight:600;}
+               
+              
+                #NewRide0{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide1{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide2{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide3{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide4{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide5{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide6{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide7{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide8{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide9{position:absolute;left:408px; z-index:3;top:110px;}
+                #NewRide11{position:absolute;left:408px;z-index:3;top:110px;}
+                #NewRide12{position:absolute;left:408px;z-index:3;top:110px;}
+                #NewRide13{position:absolute;left:408px;z-index:3;top:110px;}
+                #NewRide14{position:absolute;left:408px;z-index:3;top:110px;}
+                #NewRide15{position:absolute;left:408px;z-index:3;top:110px;}
+                #NewRide16{position:absolute;left:408px;z-index:3;top:110px;}
+                #NewRide17{position:absolute;left:408px;z-index:3;top:110px;}
+              
+                #NewRide0  img{width:46px;}
+                #NewRide1  img{width:46px;}
+                #NewRide2  img{width:46px;}
+                #NewRide3  img{width:46px;}
+                #NewRide4  img{width:46px;}
+                #NewRide5  img{width:46px;}
+                #NewRide6  img{width:46px;}
+                #NewRide7  img{width:46px;}
+                #NewRide8  img{width:46px;}
+                #NewRide9  img{width:46px;}
+                #NewRide11 img{width:46px;}
+                #NewRide12 img{width:46px;}
+                #NewRide13 img{width:46px;}
+                #NewRide14 img{width:46px;}
+                #NewRide15 img{width:46px;}
+                #NewRide16 img{width:46px;}
+                #NewRide17 img{width:46px;}
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                #errorMonitor{
+	               
+  								position:absolute;
+	               left:500px;
+	               color:red;
+	               }
+#boss img{
+width:150px;
+}
+#boss{
+	        	position:absolute;
+	        	top:40px;
+	        	left:180px;
+	        	z-index:1;
+	        	}
+         	#fox{
+	         	 top:183px;
+	         	}
+	         	   
+            #PlayScreen{
+                width:480px;
+                height:320px;
+                
+                overflow:hidden;
+                position:absolute;
+                z-index:-30;
+                top:0px;
+                left:0px;
+                background-color:#b9fff3;
+                background:url('images/yellow-storm-ocean.jpg') no-repeat;
+                cursor:crosshair; 
+            }
+            
+            #blastScreen{
+                position:absolute;
+                top:0px;
+                left:0px;
+                z-index:999999;
+                width:480px;
+                height:380px;
+                background:url('images/foreground-rain.gif');
+                opacity:0.2;
+                pointer-events: none;
+                
+            }
+            
+            #midRain{
+                position:absolute;
+                top:0px;
+                left:0px;
+                width:490px;
+                height:320px;
+                background:url('images/midrange-rain.gif') no-repeat;
+                z-index:2;
+                opacity:0.09;
+                pointer-events: none;
+                
+            }
+
+
+
+            </style>
+            
+              <script>
+                
+            </script>
+      
+            
+<script>
+	flailingArm = new Array(); //will contain x-vector of attacking arms
+ 	flailArmAwake = new Array();
+ 	flailArmTurn = new Array();	
+	flailArmX = new Array();
+ 	                                                                  		
+    for(c=0;c<NumberOfObjects;c++){ 
+	           dx = "AlongForRide" + c; 
+	            ex = "Images" + c;
+  			    flailingArm.push(1);
+  			    flailArmAwake.push(0);
+  			    flailArmTurn.push(110);
+	            d.push(document.getElementById(dx));
+                flailArmX.push(406);
+	            eImage.push(document.getElementById(ex));
+          	    
+          		}
+        
+
+function WhatPosition(CurrentValue, Difference){
+                var Butcher = CurrentValue + Difference;
+                if(Butcher<360 && Butcher>0){
+                    return Butcher;	  
+                }
+                else if(Butcher>360){
+                    Butcher=Butcher-360;
+                    return Butcher;
+                }
+                else if(Butcher<0){
+                    Butcher=Butcher+360;
+                    return Butcher;
+                }	  
+        }
+
+
+ g = 0;
+ hh = 10000;
+ intx = 0;
+ flagHH = 1;
+ launchFlag = 0;
+ fkag11 = 1;
+
+function launchArm(y){
+	Rty = "NewRide" + y;
+	
+	//the arms laucn from 408px to the right, aimed at foxX
+	//left: 406 w: 55px
+	flailingArm[y] =  Math.ceil((FoxX - 446)/50);
+	flailArmAwake[y] = 1;
+	document.getElementById(Rty).style.display="block";		
+	} 
+ 
+function MovingX(DirectionV){       
+                kk = new Date();
+   				timeDef = kk - timeAtStart;
+   				if(timeDef>(hh*flagHH)){
+	   				launchFlag = 1;
+	   				
+	   				}
+				if(CountSpeed>10){
+                    CountSpeed = 0;
+                    SetSpeed(1);		
+                }
+                RepresentFox();
+                if(w<0){
+                    w=w+359;
+                    window.cyc++;	
+                }
+                w=w + Velocity*DirectionV;
+               
+                for(counter=0;counter<NumberOfObjects;counter++){
+                    if(flailArmAwake[counter]==0){
+	                d[counter].style.left = XPlace[WhatPosition(w, (counter*Constant1))]; 
+                    eImage[counter].style.width = SizeOfFont[WhatPosition(w, (counter*Constant1))];
+                    Ztracker =  Math.round(2 - Cose[WhatPosition(w, counter*Constant1)]);
+                    switch(Ztracker)
+                    {
+                        case(Ztracker = 1):
+                        d[counter].style.zIndex = 3;
+                        break;
+                        case(Ztracker = 3):
+                        d[counter].style.zIndex = 1;
+                        break;
+                        default:
+                        d[counter].style.zIndex = 2;
+                        break;
+                    }
+                    
+                    if (WhatPosition(w, counter*Constant1) > 70 && WhatPosition(w, counter*Constant1) < 140){
+	                   d[counter].style.zIndex = counter * -1;
+	                 }
+	              
+	                if(cyc==1){
+	     	            if (WhatPosition(w, counter*Constant1) > 60 && WhatPosition(w, counter*Constant1) < 80  ){
+		    	            if((counter % 2)==0){
+		            	    	launchArm(counter);
+								d[counter].style.display = "none";
+		            	   	}                    	
+	                 	}
+	                 }else if(cyc==2){
+		             	if (WhatPosition(w, counter*Constant1) > 60 && WhatPosition(w, counter*Constant1) < 80 ){
+		    	            if((counter%2)==1){
+		            	    	launchArm(counter);
+								d[counter].style.display = "none";
+						   	}                    	
+	                 	}    
+		             }else if(cyc==4){
+		                 } 
+            		
+                    Opac[counter] = 1.4 + Cose[WhatPosition(w, counter*Constant1)];
+                    if(Math.abs(Velocity)>358){Velocity=0;}
+                 
+                    if(Opac[counter]>1){
+                        Opac[counter]=1;
+                    }  
+                     d[counter].style.opacity = Opac[counter];
+                  
+          		  }else{
+	                Rty = "NewRide" + counter;
+	                flailArmX[counter] = flailArmX[counter] + flailingArm[counter];
+	    			ft5=flailArmX[counter];
+	                document.getElementById(Rty).style.left=flailArmX[counter];	        	
+		            flailArmTurn[counter]--;
+		            wider = 110 - flailArmTurn[counter];
+		            hurtFox = 1;
+		            if(flailArmTurn[counter]<20){
+			            flailArmX[counter] = 406;
+			            flailArmAwake[counter] = 0;
+			         	document.getElementById(Rty).style.display="none";	        	
+						if(counter==1){
+		                 for(x=0;x<NumberOfObjects;x++){
+			                 d[x].style.display="block";
+			                 }
+			             	 cyc = 1;
+							}
+			         	flailArmTurn[counter] = 110;		               
+			            document.getElementById(Rty).style.zIndex="3";	        	
+						
+						}
+			        if(flailArmTurn[counter]==56){
+				        document.getElementById(Rty).style.zIndex="600";
+						if(FoxX+32<ft5){
+							hurtFox = 0;						    
+							}
+						else if(FoxX>ft5+109){
+							hurtFox = 0;
+							}
+					//	f('errorMonitor').innerHTML = ft5;	
+				        if(hurtFox==1){
+					        f('errorMonitor').innerHTML = "hurt";
+					        }else{
+						    f('errorMonitor').innerHTML = "not hurt";       
+						 }
+				        }
+			        rety = 55+wider;//left: 406 w: 55px
+			        Rht = "Img"+counter;
+			        document.getElementById(Rht).style.width=rety;	        	
+		                
+			            	
+	            	}
+	            }
+                if(Math.abs(w)>359){
+                    w=w - 359;
+                    window.cyc++;
+                }
+            }
+        
+        
+            /*
+                f('leftButton').addEventListener( 'touchstart', onTouchStart, false );
+                f('leftButton').addEventListener( 'touchmove', onTouchMove, false );
+                f('leftButton').addEventListener( 'touchend', onTouchEnd, false );
+            */
+                
+            
+            
+            
+            </script>

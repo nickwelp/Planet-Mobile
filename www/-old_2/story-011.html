@@ -1,0 +1,173 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <script src="cookieHandler.js"></script>
+    <script src="cordova-2.2.0.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+        var dialogcontent = [
+        	{
+	        "dialog" : "This is lame I'm going home!  ",
+	        "target" : "#dialog1"
+        	},
+        	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#foxy",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#birdy",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}]
+	        },
+        	
+        	
+	        {
+	        "dialog" : "You can't leave! We just about have him beat!     ",
+	        "target" : "#foxd"
+        	},
+	        
+	        {
+	        "dialog" : "I don't care. This is a drag. Turtles are very ancient and we yearn for the old ways.      ",
+	        "target" : "#dialog1"
+        	},
+        	
+	        {
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#turtley",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#fishy",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}
+	        ]},
+	       	
+       		{
+	       	"dialog": "There can be no leaving!     ",
+	       	"target": "#dialog1"
+	       	},
+	       	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#birdy",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#foxy",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}
+	        ]},
+	       	
+	       	
+	       	
+	       	{
+	       	"dialog": "The old ways?         ",
+	       	"target": "#foxd"
+	       	},
+	       	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#turtley",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		},
+	        		{"target":"#fishy",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		}
+	        ]},
+	       	
+	       	{
+	       	"dialog": "Yes you fool! Ishtar lost her marbles and we animals gained our minds!       ",
+	       	"target": "#dialog1"
+	       	},
+	       	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#birdH",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		},
+	        		{"target":"#turtley",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		}
+	        ]},
+	       	{
+	       	"dialog": "Yes you see, if you take back all the marbles, it will be we who loose our minds!      ",
+	       	"target": "#dialog1"
+	       	},
+	       	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#birdH",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#turtley",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}
+	        ]},
+	       	{
+	       	"dialog": "Bah eating, mating and swimming, life was better than you remember. I'm leaving.        ",
+	       	"target": "#dialog1"
+	       	},
+	       	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#turtley",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#capturedT",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}
+	        ]},
+	        {
+	       	"dialog": "JUST THEN A GIANT TENTCLE ENSARES TURTLE AND PULLS HIM BELOW THE WAVES.           ",
+	       	"target": "#dialog1"
+	       	},
+	       	{
+	        "dialog" : "[css]",
+	        "command" :[
+	        		{"target":"#capturedT",
+	        		 "attribute":"display",
+	        		 "order":"none"
+	        		},
+	        		{"target":"#fishy",
+	        		 "attribute":"display",
+	        		 "order":"block"
+	        		}
+	        ]},
+	        {
+	       	"dialog": "You see, it is on.           ",
+	       	"target": "#dialog1"
+	       	}
+	        
+	        ];
+	</script>
+	<script src="js/story-functions.js"></script>
+	<link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+	<a id="next" href="level-011.html" onclick="stopMusic();" style="display:none;"><img src="images/next.gif" /></a>
+	<div id="skip" onclick="skip()"><img src="images/skip.png" /></div>
+    <div id="dialog"><span id="dialog1"></span></div>
+    <div id="otherD"><span id="foxd"></span></div>
+    <img src="images/fox-face.gif" id="foxy" class="superFox" />
+    <img id="birdy" src="images/bird-face.gif" class="superFox" style="display:none;" />
+    <img id="fishy" src="images/flyingsigh-face.gif"  class="other " style="display:none;" />
+    <img id="turtley" src="images/turtle-face.gif" class="other  " />
+    <img id="capturedT" src="images/turtle-trapped.gif" style="display:none" class="other reverse" /> 
+    <img id="birdH" src="images/bird-face.gif" class="other reverse" style="display:none;" />
+</body>
+</html>
