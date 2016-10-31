@@ -1,5 +1,11 @@
 body {
     overflow: hidden;
+    position:fixed;
+    z-index:-33;
+}
+@font-face {
+    font-family: SimpleKindOfGirl;
+    src: url('../images/SimpleKindOfGirl.ttf');
 }
 #errorMonitor {
     position: absolute;
@@ -15,7 +21,7 @@ body {
     z-index: -30;
     overflow: hidden;
     background-color: #b9fff3;
-    background: url('../images/yellow-storm-ocean.jpg') no-repeat;
+    background: url('../images/skySun.gif') no-repeat;
     background-size: cover;
 }
 #audioTag {
@@ -213,105 +219,92 @@ body {
     color: white;
     position: absolute; font-size:2em;font-weight:600;
 }
+.eImages{
+    transition:max-height .5s;
+    max-height: auto;
+}
 #NewRide0 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide1 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide2 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide3 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide4 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide5 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide6 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide7 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide8 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide9 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide11 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide12 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide13 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide14 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide15 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide16 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
 #NewRide17 {
-    position: absolute;
-    left: 408px;
+    position: fixed;
     z-index: 3;
     top: 50%;
 }
@@ -385,6 +378,7 @@ body {
 #fox {
     position: absolute;
     top: 55%;
+    pointer-events:none;
 }
 
 #blastScreen {
@@ -394,11 +388,13 @@ body {
     bottom: 0;
     right: 0;
     z-index: 999999;
+    display:none;
     /*  background:url('images/foreground-rain.gif');*/
     
     background-size: cover;
     opacity: 0.2;
     pointer-events: none;
+    background:#A00;
 }
 #start{
     position:fixed;
@@ -433,4 +429,56 @@ body {
     z-index: 2550;
     background: url('../images/leftButton.png') center center no-repeat;
     background-size: contain;
+}
+#health{
+    position:absolute;
+    background-color:#f00;
+    z-index:5;
+
+ 
+}
+#boss-health{
+    position:absolute;
+    background-color:#44F;
+    z-index:5;
+
+ 
+}
+#score{
+    position:absolute;
+    font-weight:700;
+    font-family:arial;
+    color:#900;
+    z-index:9;
+}
+#marble{
+    position:absolute;
+    font-weight:700;
+    font-family:arial;
+    color:#909;
+    z-index:9;
+}
+#oceanView{
+    position:fixed;
+    background:url('../images/oceanbottom.gif');
+    background-size:cover;
+    top:55%;
+    left:0;
+    bottom:0;
+    right:0;
+    
+    cursor-event:none;
+    z-index:-29;
+}
+#endScreen{
+    position:fixed;
+    top:0px;
+    left:0px;
+    bottom:50%;
+    right:0;
+    background-color:red;
+    color:black;
+    font-family:SimpleKindOfGirl;
+    text-align:center;
+    z-index:9999;
 }

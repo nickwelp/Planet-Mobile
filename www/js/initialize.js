@@ -158,7 +158,8 @@ Start:function(){ //Start initiates game play; Spine() is the systemic update of
 	PlanetFox.FoxJumpCounter = 1;
 	f('health').style.width = this.FoxHealth;
 	f('fox').style.top = this.FoxY;
-	
+	f('score').innerHTML = this.Score;
+	f('marble').innerHTML =PlanetFox.MarbleScore;
 	this.StartMusic();
 	function queueMusic() {
         	if(!PlanetFox.FiredOnce){

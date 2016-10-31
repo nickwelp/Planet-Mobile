@@ -50,20 +50,23 @@ body{
 }
 #health{
 	position:absolute;
-	background-color:red;
+	background-color:#fff;
+	z-index:5;
+
  
 }
 #score{
 	position:absolute;
 	font-weight:700;
 	font-family:arial;
-	color:red;
+	color:#900;
+	z-index:9;
 }
 #marble{
 	position:absolute;
 	font-weight:700;
 	font-family:arial;
-	color:purple;
+	color:#909;
 }
 #leftButton{
 	position:absolute;

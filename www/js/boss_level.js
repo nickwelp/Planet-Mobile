@@ -6,12 +6,54 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 document.addEventListener('mouseup', function(e) {var select = window.getSelection(); select.removeAllRanges(); });
 document.addEventListener('keyup', function(e) {var select = window.getSelection(); select.removeAllRanges(); });
 
+
+function getCookie(cname){
+    var i,x,y;
+    var QuickCookies= new Array();
+    QuickCookies = document.cookie.split(";");
+    for (i=0;i<QuickCookies.length;i++){
+      x=QuickCookies[i].substr(0,QuickCookies[i].indexOf("="));
+      y=QuickCookies[i].substr(QuickCookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x==cname){
+        return unescape(y);
+      }
+  }
+}
+
+function setCookie(cname,value,expiredays){
+    var expiredate=new Date();
+    expiredate.setDate(expiredate.getDate() + expiredays);
+    var cvalue=escape(value) + ((expiredays==null) ? "" : "; expires="+expiredate.toUTCString());
+    document.cookie=cname + "=" + cvalue;
+}
+
+    
+
+
+
 var boss_level = boss_level||{};
 
 boss_level.init = function(){
     f('page_body').setAttribute("onkeypress", "boss_level.ProcessKeyStroke(event)");
     f('page_body').setAttribute("onkeyup", "boss_level.clearCommand();");
     f('start').setAttribute("onclick", "boss_level.GoLeft();");
+    boss_level.boss_hit_points = 101;
+    boss_level.Score = parseInt(getCookie("score"));
+    boss_level.ext = (new Audio().canPlayType("audio/ogg; codecs=vorbis"))?".ogg":".mp3";
+    boss_level.MarbleScore = parseInt(getCookie("marbles"));
+    boss_level.FoxHealth = (parseInt(getCookie("health"))>0) ? parseInt(getCookie("health")):100;
+    boss_level.EffectsVolume = (parseFloat(getCookie("EffectVol"))>0.01) ? parseFloat(getCookie("EffectVol")) : 0.5;
+    boss_level.MusicVolume = (parseFloat(getCookie("MusicVol"))>0.01) ? parseFloat(getCookie("MusicVol")) : 0.5;
+    boss_level.WhatSong  = (parseInt(getCookie("WhatSong"))>0) ?   parseInt(getCookie("WhatSong")) : 1;
+    boss_level.TimeOfSong = (parseFloat(getCookie("TimeOfSong"))>0.01) ? parseFloat(getCookie("TimeOfSong")) : 0.0;
+    boss_level.SongType = null;
+    boss_level.song = null;
+    boss_level.boss_can_be_hurt = false;
+    f('boss-health').style.width = boss_level.boss_hit_points;
+    f('health').style.width = boss_level.FoxHealth;
+    f('score').innerHTML = boss_level.Score;
+    f('marble').innerHTML = boss_level.MarbleScore;
     boss_level.LastKeyPress = "";   
     boss_level.di = new Date();
     boss_level.timeAtStart = null;
@@ -21,11 +63,14 @@ boss_level.init = function(){
     boss_level.CountSpeed=1;
     boss_level.IntervalID = null;
     boss_level.w = 0; 
+    boss_level.max_height_animation = 0;
     boss_level.wy = 0;
     boss_level.spin_velocity = 0;
     boss_level.g = 0;
     boss_level.hh = 10000;
     boss_level.intx = 0;
+    boss_level.animation_height_constant = 260;
+    boss_level.animation_return_id = null;
     boss_level.flagHH = 1;
     boss_level.launchFlag = 0;
     boss_level.fkag11 = 1;
@@ -38,6 +83,7 @@ boss_level.init = function(){
     boss_level.SizeOfFont = new Array();
     boss_level.XPlace = new Array();
     boss_level.YPlace = new Array();
+    boss_level.tentacle_z_index_mod = 0;
     boss_level.d = new Array();
     boss_level.Constant1 = 360/boss_level.NumberOfObjects;
     boss_level.WindowWidth = f('PlayScreen').offsetWidth - 70;
@@ -135,6 +181,7 @@ boss_level.RepresentFox = function(){
 
 boss_level.LevelUp = function(){
     clearInterval(boss_level.IntervalID);
+    boss_level.LastKeyPress = "aaaaa";
     boss_level.spin_velocity--;
     boss_level.IntervalID = setInterval(function(){
         boss_level.MovingX(boss_level.spin_velocity);
@@ -143,30 +190,58 @@ boss_level.LevelUp = function(){
 
 boss_level.GoLeft = function(){
     boss_level.timeAtStart = boss_level.di.getTime();
+    boss_level.StartMusic();
     f('start').style.display="none";
     boss_level.LevelUp();
 };
             
 boss_level.DisplayEnd = function(X){
     clearInterval(boss_level.IntervalID);
-    /*  song.stop();
-    song.release(); */
+    //boss_level.song.stop();
+    //boss_level.song.release();
+    boss_level.TimeOfSong = Math.floor(f('audioTag').currentTime);
+    f('audioTag').pause();
+    f('endScreen').style.display="block";
+    f("scoreTT").innerHTML = boss_level.Score;
+    f("marblesTT").innerHTML = boss_level.MarbleScore;
+    f("nextLevel").innerHTML = "<a href='story-028.html'> Next </a>";
     boss_level.setData();
-    boss_level.callEndOfLevel("story-029.html");
+    f('endScreen').style.display = "block";
     //window.location.reload();             
 };
-boss_level.setData = function(){};
-boss_level.callEndOfLevel = function(a){};
 
 boss_level.WhatPosition = function(CurrentValue, Difference){ return ((CurrentValue + Difference)%360); };
 
 boss_level.launchArm = function(y){
-	//the arms laucn from 408px to the right, aimed at foxX
-	//left: 406 w: 55pxWindo
-	boss_level.flailingArm[y] =  Math.ceil(( boss_level.FoxX - boss_level.WindowWidth + (Math.ceil(boss_level.WindowWidth*0.01) ))/50);
-	boss_level.flailArmAwake[y] = 1;
-	f("NewRide" + y).style.display="block";		
+
+	boss_level.flailingArm[y] =   Math.ceil(((boss_level.FoxX - f('fox').offsetWidth/2)- (boss_level.WindowWidth - 0))/95); //Math.ceil(( boss_level.FoxX - boss_level.WindowWidth + (Math.ceil(boss_level.WindowWidth*0.01) ) )/50);
+	boss_level.flailArmAwake[y] = 1; 
+	setTimeout(function(){f("NewRide" + y).style.display="block";},25);
 }; 
+boss_level.animate_return = function(){
+    boss_level.animation_return_id = setInterval(function(){
+        for(var x=0;x<boss_level.NumberOfObjects;x++){
+            if(boss_level.max_height_animation==0) boss_level.d[x].style.display = "block";
+            var width_in_spin = boss_level.SizeOfFont[boss_level.WhatPosition(boss_level.w, (x*boss_level.Constant1))];
+            if(typeof width_in_spin == "string") width_in_spin = width_in_spin.replace("px","");
+            var nominal_height = Math.ceil( ( ((width_in_spin*1.37)/boss_level.animation_height_constant) * (boss_level.animation_height_constant-boss_level.max_height_animation) ));
+            var string = "calc(50% + " + nominal_height + "px)";    
+            boss_level.d[x].style.top = string;
+            boss_level.eImage[x].style.maxHeight=boss_level.max_height_animation;// restarts cycle
+        }
+        boss_level.max_height_animation += Math.floor(boss_level.animation_height_constant/130);
+        if(boss_level.max_height_animation>boss_level.animation_height_constant){
+            for(x=0;x<boss_level.NumberOfObjects;x++){
+                boss_level.eImage[x].style.maxHeight="1000";
+                boss_level.d[x].style.top = "50%";
+            }
+            boss_level.max_height_animation=0;
+            clearInterval(boss_level.animation_return_id);
+            boss_level.cyc = 0;
+            boss_level.boss_can_be_hurt = false;
+        }
+    },15);
+};
  
 boss_level.MovingX = function(DirectionV){       
    	var timeDef = (new Date()) - boss_level.timeAtStart;
@@ -182,6 +257,7 @@ boss_level.MovingX = function(DirectionV){
     }
     boss_level.w=boss_level.w + boss_level.Velocity*DirectionV;           
     for(var counter=0;counter<boss_level.NumberOfObjects;counter++){
+        if(counter==0) boss_level.IsMusicOver();
         if(boss_level.flailArmAwake[counter]==0){
 	        boss_level.d[counter].style.left = boss_level.XPlace[boss_level.WhatPosition(boss_level.w, (counter*boss_level.Constant1))];
             boss_level.eImage[counter].style.width = boss_level.SizeOfFont[boss_level.WhatPosition(boss_level.w, (counter*boss_level.Constant1))];
@@ -220,43 +296,167 @@ boss_level.MovingX = function(DirectionV){
             //d[counter].style.opacity = Opac[counter];      
         }else{
 	        boss_level.flailArmX[counter] = boss_level.flailArmX[counter] + boss_level.flailingArm[counter];
-	    	f("NewRide" + counter).style.left=boss_level.flailArmX[counter];	        	
+	    	f("NewRide" + counter).style.left=boss_level.flailArmX[counter];
+            f("NewRide" + counter).style.zIndex=5 + (110- boss_level.flailArmTurn[counter]);
+
 		    boss_level.flailArmTurn[counter] =  boss_level.flailArmTurn[counter] - boss_level.armFlySpeed;
 		    var wider = (Math.floor(boss_level.WindowWidth * 0.12)) - boss_level.flailArmTurn[counter]; //0.12 estimated width of fox vs screen ... foxwidth/screenwidth
 		    var hurtFox = 1;
 		    if(boss_level.flailArmTurn[counter]<0){
-			    boss_level.flailArmX[counter] = boss_level.WindowWidth-50;
+			    boss_level.flailArmX[counter] = boss_level.WindowWidth-0;
 			    boss_level.flailArmAwake[counter] = 0;
 				f("NewRide" + counter).style.display="none";	        	
+                var finished_flag = true;
 				if(counter==1){
-		           for(var x=0;x<boss_level.NumberOfObjects;x++){
-			            boss_level.d[x].style.display="block";// restarts cycle
-			        }
-			        boss_level.cyc = 1;
+                    for(var r = 0;r<boss_level.flailArmTurn[counter].length;r++){
+		               if(boss_level.flailArmTurn[r]>=0) finished_flag = false;
+                    }
+                    if(finished_flag) {
+                        boss_level.boss_can_be_hurt = true;
+                        setTimeout(function(){boss_level.animate_return();}, 1500);    
+                    }
 				}
 			    boss_level.flailArmTurn[counter] = 110;		               
-			    f("NewRide" + counter).style.zIndex="4";	        	
+			    f("NewRide" + counter).style.zIndex=4;
+
 			}
-			if(boss_level.flailArmTurn[counter]==56){
+			if(boss_level.flailArmTurn[counter]==15){
 			    f("NewRide" + counter).style.zIndex="600";
-				if(boss_level.FoxX+32<boss_level.flailArmX[counter]) hurtFox = 0;						   
-				else if(boss_level.FoxX>boss_level.flailArmX[counter]+109) hurtFox = 0;
-			    if(hurtFox==1) f('errorMonitor').innerHTML = "hurt";
-			    else f('errorMonitor').innerHTML = "not hurt";       	 
+				if(boss_level.FoxX+f('fox').offsetWidth<boss_level.flailArmX[counter]) hurtFox = 0;						   
+				else if(boss_level.FoxX>boss_level.flailArmX[counter]+f('NewRide'+counter).offsetWidth) hurtFox = 0;
+			    if(hurtFox==1){
+                    boss_level.FoxHealth -= 5;
+                    f('health').style.width = boss_level.FoxHealth;
+                    boss_level.hurt_red_haze();
+                    boss_level.HurtFoxSound();
+                } 
+			    else {
+                    window.console && console.log("[Planet Fox] avoided arm...");
+                }
 			}
 			f("Img"+counter).style.width=55+wider;	        			            	
+
 	    }
 	} //end var counter
     if(Math.abs(boss_level.w)>359){
-        boss_level.w=boss_level.w - 359;
+        boss_level.w=boss_level.w % 359;
         boss_level.cyc++;
     }
 }; //end MovingX
-        
+ 
+boss_level.hurt_boss = function(){
+    window.console && console.log("[Planet Fox] Boss was clicked");
+    if(boss_level.boss_can_be_hurt){
+        boss_level.boss_can_be_hurt = false;
+        boss_level.boss_hit_points -= 5;
+        f('boss-img').src = 'images/boss-hurt-animated.gif';
+        f('boss-health').style.width = boss_level.boss_hit_points;
+        setTimeout(function(){
+            f('boss-img').src = 'images/boss.gif';
+        }, 1500);
+        if(boss_level.boss_hit_points%20==1){
+            boss_level.LevelUp();
+        }
+        if(boss_level.boss_hit_points<0){
+            boss_level.DisplayEnd("boss defeated!");
+        }    
+    }
+}    
+
+boss_level.setData = function(){
+    var expiredays = 365;   
+    setCookie("health",boss_level.FoxHealth,expiredays);
+    setCookie("rotationSpeed",boss_level.rotationSpeed,expiredays);
+    setCookie("EffectVol",boss_level.EffectsVolume,expiredays);
+    setCookie("MusicVol",boss_level.MusicVolume,expiredays);
+    setCookie("WhatSong",boss_level.WhatSong,expiredays);
+    setCookie("TimeOfSong",Math.floor(f('audioTag').currentTime),expiredays);
+};
+    
+boss_level.hurt_red_haze = function(){
+    f('blastScreen').style.display = "block";
+    var i = setTimeout(function(){
+        f('blastScreen').style.display = "none";
+    }, 100);
+
+};
 
 function onTouchStart(event) { boss_level.deltaTouch = event.touches[0].clientX - 71; }
 function onTouchMove(event) { boss_level.deltaTouch = event.touches[0].clientX - 71; } 
 function onTouchEnd(event) { boss_level.deltaTouch = 0; }
+
+
+
+boss_level.queueMusic = function() {
+    if(!boss_level.FiredOnce){
+        try{ 
+            window.console && console.log("[PF] Firing Current Time Setter");
+            //oh firefox how I love thy bugs https://bugzilla.mozilla.org/show_bug.cgi?id=842500
+            f('audioTag').currentTime = boss_level.TimeOfSong;        
+            boss_level.FiredOnce = true;
+        }catch(e){}
+    }else{
+        window.console && console.log("[PF] Firing else Statement");
+        boss_level.TimeOfSong = 0;
+        f('audioTag').removeEventListener("canplay", boss_level.queueMusic, true);
+        window.console && console.log("[PF] Removed Event Listener");
+    }
+} 
+
+
+f('audioTag').addEventListener("canplay", boss_level.queueMusic,true);
+f('audioTag').play();   
+
+boss_level.SetEffectVolume = function(){
+    boss_level.EffectsVolume = parseFloat(f('EffVol').value);
+    setCookie("EffectVol",x,365);
+};
+boss_level.SetMusicVolume = function(){
+    var x = parseFloat(f('musVol').value);
+    f('audioTag').volume = x;
+    setCookie("MusicVol",x,365);
+};
+
+boss_level.StartMusic = function(){  
+    var SongName;
+    if(boss_level.WhatSong==7) boss_level.WhatSong = 1;
+    if(boss_level.WhatSong==1) SongName="twisted";        
+    if(boss_level.WhatSong==2) SongName="The-Night";
+    if(boss_level.WhatSong==3) SongName="Radio";
+    if(boss_level.WhatSong==4) SongName="Summertime";
+    if(boss_level.WhatSong==5) SongName="superhero";  
+    if(boss_level.WhatSong==6) SongName="stuck";
+    
+    if(boss_level.SongType && boss_level.SongType!=null && boss_level.SongType == "Sad") SongName = "Joanna";
+        
+    var FileName = "audio/"+ SongName +  boss_level.ext;  
+    
+    boss_level.song = f('audioTag');
+    boss_level.song.src = FileName; // buffers automatically when created
+    if(boss_level.MusicVolume==null){
+        boss_level.MusicVolume=0.6;
+        }
+    boss_level.song.volume = parseFloat(boss_level.MusicVolume);
+    
+};
+boss_level.IsMusicOver = function(){
+    if(f('audioTag').paused){ 
+        boss_level.WhatSong++;
+        boss_level.StartMusic();
+        f('audioTag').volume = boss_level.MusicVolume;
+        setTimeout(function(){f('audioTag').play()},500);
+        }
+};
+
+boss_level.HurtFoxSound = function(){
+    var file = "audio/bop"+boss_level.ext;
+    var painSound = new Audio(file);
+    painSound.volume = boss_level.EffectsVolume;
+    painSound.play();
+};
+
+
+
 
 boss_level.last_load = function(){   
     boss_level.hidePreLoad();
@@ -271,6 +471,26 @@ boss_level.last_load = function(){
     f('pause').style.top = "";
     f('pause').style.bottom = '0px';
     f('pause').style.left = Math.round((boss_level.ScreenWidth/boss_level.nine6constant)*(380/50));
+    f('health').style.height = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50));
+    f('health').style.left = Math.round((boss_level.ScreenWidth/boss_level.nine6constant)*(20/50));
+    f('health').style.height = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50));
+    f('health').style.top = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50));
+
+    f('boss-health').style.height = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50));
+    f('boss-health').style.left = Math.round((boss_level.ScreenWidth/boss_level.nine6constant)*(20/50));
+    f('boss-health').style.height = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50));
+    f('boss-health').style.top = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50)) + 20;
+    
+    f('score').style.left = Math.round((boss_level.ScreenWidth/boss_level.nine6constant)*(300/50));
+    f('score').style.top = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50));
+    
+    var fontS = Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(12/50)) + "px";
+    f('score').style.fontSize = fontS;
+    f('marble').style.left =  Math.round((boss_level.ScreenWidth/boss_level.nine6constant)*(400/50));
+    f('marble').style.top =  Math.round((boss_level.ScreenHeight/boss_level.six4constant)*(10/50));
+    f('marble').style.fontSize = fontS;
+    f('boss-img').setAttribute("onclick", "boss_level.hurt_boss();");
+
 };
 
 boss_level.last_load();
